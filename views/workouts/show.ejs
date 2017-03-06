@@ -5,14 +5,14 @@
 <h2><%= week[currentDay] %></h2>
 <% workout.plan.forEach(p =>{  %>
   <% if(p.day > currentDay){ %>
-  <%  currentDay ++; %>
+  <%  currentDay =p.day %>
     <h2><%= week[currentDay] %></h2>
   <% } %>
   <p>
 
-    <!-- Sets:<%= p.sets %> -->
+    <a href='/exercises/<%= p.exercise %>'>
     <%= p.exercise %>
-
+    </a>
   </p>
 
 <% }) %>

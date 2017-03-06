@@ -3,8 +3,10 @@
   <% users.forEach( user =>{ %>
     <a href="users/<%= user._id %>">
     <li>
-      Name : <%= user.name %>
-      goal : <%= user.goal %>
+      <p>
+        <%= user.name %>
+      </p>
+
     </li>
     </a>
   <% }) %>

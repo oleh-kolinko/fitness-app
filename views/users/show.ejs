@@ -1,12 +1,26 @@
+<!-- Show user info -->
 <h2>User</h2>
-  <ul>
-    <li>
-      <%= user.name %>
-    </li>
+<p>
+  Name : <%= user.name %>
+</p>
+<p>
+  Goal : <%= user.goal %> weight
+</p>
+<p>
+  ImgUrl : <%= user.img %>
+</p>
+<p>
+  Upvotes : <%= user.upvotes %>
+</p>
 
+<!-- Show user created workouts -->
+<h2>User Workouts:</h2>
+<ul>
+  <% workouts.forEach( workout =>{ %>
+    <a href="workouts/<%= workout._id %>">
     <li>
-      <%= user.goal %>
+      Name : <%= workout.name %>
     </li>
-
-    <!-- <img src="<%= user.img %>" alt="Profile image"> -->
-  </ul>
+    </a>
+  <% }) %>
+</ul>

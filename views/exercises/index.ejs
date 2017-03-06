@@ -1,0 +1,10 @@
+<ul>
+  <h2>All exercises:</h2>
+  <% exercises.forEach( exercise =>{ %>
+    <a href="exercises/<%= exercise.name %>">
+      <li>
+        Name : <%= exercise.name %>
+      </li>
+    </a>
+  <% }) %>
+</ul>

@@ -23,6 +23,7 @@ const exercises = [
 const workouts = [
   {
     name: 'Beast',
+    owner: '58bdac10d7d0a241068ba745',
     upvotes: 10,
     plan:[
       {day: 0 , sets: 2, exercise:'Bench press'},
@@ -35,6 +36,23 @@ const workouts = [
   },
   {
     name: 'Animal',
+    owner: '58bdac10d7d0a241068ba745',
+    upvotes: 10,
+    plan:[
+      {day: 0 , sets: 2, exercise:'Bench press'},
+      {day: 1 , sets: 2, exercise:'Bench press'},
+      {day: 2 , sets: 2, exercise:'Bench press'},
+      {day: 3 , sets: 2, exercise:'Squat'},
+      {day: 4 , sets: 2, exercise:'Bench press'},
+      {day: 5 , sets: 2, exercise:'Bench press'},
+      {day: 5 , sets: 2, exercise:'Squat'},
+      {day: 6 , sets: 2, exercise:'Bench press'},
+    ],
+    goal: 'lose',
+  },
+  {
+    name: 'another WO',
+    owner: '58bd7402d661823548ea3c9e',
     upvotes: 10,
     plan:[
       {day: 0 , sets: 2, exercise:'Bench press'},
