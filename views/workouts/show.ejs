@@ -1,12 +1,18 @@
-<h2>Workout</h2>
-  <ul>
-    <li>
-      <%= workout.name %>
-    </li>
+<!-- SHOW INDIVIDUAL WORKOUT PLAN -->
+<% let currentDay = workout.plan[0].day  %>
+<h1><%= workout.name %></h1>
 
-    <li>
-      <%= workout.goal %>
-    </li>
+<h2><%= week[currentDay] %></h2>
+<% workout.plan.forEach(p =>{  %>
+  <% if(p.day > currentDay){ %>
+  <%  currentDay ++; %>
+    <h2><%= week[currentDay] %></h2>
+  <% } %>
+  <p>
 
-    <!-- <img src="<%= user.img %>" alt="Profile image"> -->
-  </ul>
+    <!-- Sets:<%= p.sets %> -->
+    <%= p.exercise %>
+
+  </p>
+
+<% }) %>

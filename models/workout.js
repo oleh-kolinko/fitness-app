@@ -6,17 +6,15 @@ const workoutSchema = new Schema({
   name: String,
   owner: {type: Schema.Types.ObjectId, ref: 'User'},
   upvotes: Number,
-  day: [{
-    exercise: [{
+  plan: [{
+      day: Number,
       sets: Number,
-      reps: Number,
-      exercise: {type: Schema.Types.ObjectId, ref: 'Exercise'},
-    }]
-  }],
+      exercise: String,
+    }],
+
   goal: String,
 });
 
-workoutSchema.set('timestamps', true);
 
 const Workout = mongoose.model('Workout', workoutSchema);
 

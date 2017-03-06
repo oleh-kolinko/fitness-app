@@ -95,6 +95,8 @@ const auth = require('./routes/auth');
 app.use('/', auth);
 const users = require('./routes/users');
 app.use('/', users);
+const workouts = require('./routes/workouts');
+app.use('/', workouts);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

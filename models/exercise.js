@@ -8,8 +8,6 @@ const exerciseSchema = new Schema({
   description: String
 });
 
-userSchema.set('timestamps', true);
-
 const Exercise = mongoose.model('Exercise', exerciseSchema);
 
 module.exports = Exercise;

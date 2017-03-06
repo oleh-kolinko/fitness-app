@@ -3,15 +3,12 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   name: String,
-  //email: { type: String, required: true },
   username: { type: String, required: true },
   password: { type: String, required: true },
   goal: String,
   img: String,
   upvotes: Number,
-  workouts: {type: Schema.Types.ObjectId, ref: 'Workout'},
-  //isTrainer: { type: Boolean, default: false },
-  //fee: { type: Number, default: null }
+  workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
 });
 
 userSchema.set('timestamps', true);
