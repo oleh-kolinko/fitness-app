@@ -7,8 +7,9 @@ const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
   goal: String,
+  img: String,
   upvotes: Number,
-  workouts: [],
+  workouts: {type: Schema.Types.ObjectId, ref: 'Workout'},
   //isTrainer: { type: Boolean, default: false },
   //fee: { type: Number, default: null }
 });

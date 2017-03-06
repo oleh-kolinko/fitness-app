@@ -5,6 +5,7 @@ const exerciseSchema = new Schema({
   name: String,
   video: String,
   muscle: String,
+  description: String
 });
 
 userSchema.set('timestamps', true);

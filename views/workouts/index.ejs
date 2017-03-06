@@ -1,0 +1,11 @@
+<ul>
+  <h2>All workouts:</h2>
+  <% workouts.forEach( workout =>{ %>
+    <a href="users/<%= user._id %>">
+    <li>
+      Name : <%= workout.name %>
+      goal : <%= workout.goal %>
+    </li>
+    </a>
+  <% }) %>
+</ul>

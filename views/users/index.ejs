@@ -1,11 +1,11 @@
 <ul>
-
+  <h2>All users:</h2>
   <% users.forEach( user =>{ %>
-
+    <a href="users/<%= user._id %>">
     <li>
       Name : <%= user.name %>
       goal : <%= user.goal %>
     </li>
-    
+    </a>
   <% }) %>
 </ul>

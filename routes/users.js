@@ -12,13 +12,15 @@ router.get('/users',(req,res,next)=>{
   });
 });
 
-router.get('/:id',(req,res,next)=>{
+router.get('/users/:id',(req,res,next)=>{
   const id = req.params.id;
 
   User.findById(id,(err,result)=>{
     if(err) return next(err);
 
-
+    res.render('users/show',{
+      user: result
+    });
   });
 
 });
