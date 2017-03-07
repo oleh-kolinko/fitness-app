@@ -9,15 +9,20 @@ const exercises = [
     name: 'Bench press',
     // video: '',
     muscle: 'chest',
-    description: '123',
+    description: 'blabla1',
   },
   {
     name: 'Squat',
     // video: '',
     muscle: 'legs',
-    description: '123',
+    description: 'bla2',
   },
-
+  {
+    name: 'Shoulder press',
+    // video: '',
+    muscle: 'shoulders',
+    description: 'blabla3',
+  },
 ];
 
 const workouts = [
@@ -51,7 +56,7 @@ const workouts = [
     goal: 'lose',
   },
   {
-    name: 'another WO',
+    name: 'Shark',
     owner: '58bd7402d661823548ea3c9e',
     upvotes: 10,
     plan:[
@@ -69,16 +74,7 @@ const workouts = [
 ];
 
 
-// Exercise.create(exercises, (err, docs) => {
-//   if(err) throw err;
-//
-//   docs.forEach((oneDoc)=>{
-//     console.log(`${oneDoc.name} ${oneDoc._id}`);
-//   });
-//
-//   mongoose.disconnect();
-// });
-Workout.create(workouts, (err, docs) => {
+Exercise.create(exercises, (err, docs) => {
   if(err) throw err;
 
   docs.forEach((oneDoc)=>{
@@ -87,3 +83,13 @@ Workout.create(workouts, (err, docs) => {
 
   mongoose.disconnect();
 });
+
+// Workout.create(workouts, (err, docs) => {
+//   if(err) throw err;
+//
+//   docs.forEach((oneDoc)=>{
+//     console.log(`${oneDoc.name} ${oneDoc._id}`);
+//   });
+//
+//   mongoose.disconnect();
+// });

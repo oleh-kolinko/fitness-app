@@ -1,7 +1,46 @@
 <h2> Create workout </h2>
 
-  week.forEach(day => {
-    <h2>
-      day
-    </h2>
-  })
+
+<form id="new-workout-form" action="/workouts/new" method="post">
+
+  <label for='name'>Workout Name:</label>
+  <input id='name' name='name'></input>
+
+  <select class="" name="goal">
+    <option value="gain">Gain weight</option>
+    <option value="lose">Lose weigth</option>
+  </select>
+
+
+
+  <% week.forEach((day,i) => { %>
+
+
+    <div class='day-box' data-day='<%= i %>'>
+      <h2>
+        <%= day %>
+      </h2>
+
+      <div class="add-exercise">
+        Add Exercise
+      </div>
+
+    </div>
+
+  <% }) %>
+  <button>Submit</button>
+</form>
+
+<div id="choose-exercise" hidden>
+  <select id='exercise-selector' name="">
+    <% exercises.forEach(e=>{ %>
+      <option value="<%= e.name %>"><%= e.name %></option>
+    <% }) %>
+  </select>
+
+  <label for='sets'>Sets:</label>
+  <input id='sets' type='number' min='0'></input>
+  <button id="add">add</button>
+</div>
+
+<script src='/js/new-workout.js'></script>

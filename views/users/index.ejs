@@ -1,13 +1,14 @@
+<h2>All users:</h2>
 <ul>
-  <h2>All users:</h2>
   <% users.forEach( user =>{ %>
-    <a href="users/<%= user._id %>">
+    
     <li>
+      <a href="users/<%= user._id %>">
       <p>
         <%= user.name %>
       </p>
-
-    </li>
     </a>
+  </li>
+
   <% }) %>
 </ul>

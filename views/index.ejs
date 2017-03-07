@@ -1,7 +1,10 @@
+<h1>Hello
+<% if(user){ %>
+   <%= user.name %>
+  <% }  %>
+</h1>
 <ul>
   <li> <a href="/signup"> Sign Up </a> </li>
   <li> <a href="/login"> Log In </a> </li>
+  
 </ul>
-<% if(user){ %>
-  Welcome <%= user.name %>
-<% }  %>

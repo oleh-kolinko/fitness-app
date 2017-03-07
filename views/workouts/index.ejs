@@ -1,10 +1,12 @@
 <h2>All workouts:</h2>
 <ul>
   <% workouts.forEach( workout =>{ %>
-    <a href="workouts/<%= workout._id %>">
+
     <li>
-      Name : <%= workout.name %>
+      <a href="workouts/<%= workout._id %>">
+        <%= workout.name %>
+      </a>
     </li>
-    </a>
+    
   <% }) %>
 </ul>

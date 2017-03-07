@@ -2,8 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Workout = require('../models/workout');
 const Exercise = require('../models/exercise');
+const User = require('../models/user');
+const ensure = require('connect-ensure-login');//check if user is logged in?
 
-const week = ['Monday', 'Tuesday', 'Thursday', 'Wednesday', 'Friday', 'Saturday', 'Sunday'];
+
+const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 router.get('/workouts',(req,res,next)=>{
   Workout.find((err,result)=>{
@@ -12,6 +15,45 @@ router.get('/workouts',(req,res,next)=>{
     res.render('workouts/index',{
       workouts: result
     });
+  });
+});
+
+
+router.get('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
+
+  Exercise.find((err,result)=>{
+    res.render('workouts/new',{
+      week:week,
+      exercises:result,
+    });
+  });
+
+});
+
+router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
+
+  let newWorkout= new Workout({
+    name: req.body.name,
+    goal: req.body.goal,
+    owner: req.user._id,
+    upvotes: 0,
+    plan: [],
+  });
+
+  for(let i = 0; i< req.body.day.length; i++){
+
+    newWorkout.plan.push({
+      day: parseInt(req.body.day[i]),
+      sets: parseInt(req.body.sets[i]),
+      exercise: req.body.exercise[i],
+    });
+  }
+
+
+  newWorkout.save((err,result)=>{
+
+    console.log(result);
+    res.redirect('/');
   });
 });
 
@@ -30,19 +72,18 @@ router.get('/workouts/:id',(req,res,next)=>{
       },(err,resultExercise)=>{
       if(err) return next(err);
 
+      User.findById(resultWorkout.owner,(err,resultUser)=>{
 
-      res.render('workouts/show',{
-        week: week,
-        workout: resultWorkout,
-        exercises: resultExercise
+        res.render('workouts/show',{
+          week: week,
+          workout: resultWorkout,
+          exercises: resultExercise,
+          owner: resultUser
+        });
+
       });
     });
-
-
-
   });
-
-
 });
 
 module.exports = router;

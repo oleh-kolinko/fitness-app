@@ -3,10 +3,14 @@ const router  = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  console.log(req.user);
-  res.render('index',{
-    user: req.user
-  });
+  if(req.user){
+    res.redirect(`users/${req.user._id}`);
+  }else{
+    res.render('index',{
+      user: req.user
+    });
+
+  }
 });
 
 module.exports = router;

@@ -1,7 +1,9 @@
 <!-- SHOW INDIVIDUAL WORKOUT PLAN -->
-<% let currentDay = workout.plan[0].day  %>
-<h1><%= workout.name %></h1>
+<h1>Program: <%= workout.name %></h1>
 
+Created by <%= owner.name %><a href="/users/<%= owner._id %> ">Link</a>
+
+<% let currentDay = workout.plan[0].day  %>
 <h2><%= week[currentDay] %></h2>
 <% workout.plan.forEach(p =>{  %>
   <% if(p.day > currentDay){ %>
