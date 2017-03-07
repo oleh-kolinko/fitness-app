@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const Workout = require('../models/workout');
+const ensure = require('connect-ensure-login');
 
 router.get('/users',(req,res,next)=>{
   User.find((err,result)=>{
@@ -13,7 +14,7 @@ router.get('/users',(req,res,next)=>{
   });
 });
 
-router.get('/users/:id',(req,res,next)=>{
+router.get('/users/:id',ensure.ensureLoggedIn(),(req,res,next)=>{
   const id = req.params.id;
 
   User.findById(id,(err,resultUser)=>{
@@ -24,8 +25,14 @@ router.get('/users/:id',(req,res,next)=>{
       (err,resultWorkout)=>{
       if(err) return next(err);
 
+      let myProfile = false;
+      if(id == req.user._id){
+        myProfile = true;
+      }
+
       res.render('users/show',{
         user: resultUser,
+        myProfile: myProfile,
         workouts: resultWorkout
       });
     });

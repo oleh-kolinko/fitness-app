@@ -4,11 +4,11 @@
 <form id="new-workout-form" action="/workouts/new" method="post">
 
   <label for='name'>Workout Name:</label>
-  <input id='name' name='name'></input>
+  <input id='name' name='name' required></input>
 
   <select class="" name="goal">
-    <option value="gain">Gain weight</option>
-    <option value="lose">Lose weigth</option>
+    <option value="Gain weight">Gain weight</option>
+    <option value="Lose weight">Lose weight</option>
   </select>
 
 
@@ -39,7 +39,10 @@
   </select>
 
   <label for='sets'>Sets:</label>
-  <input id='sets' type='number' min='0'></input>
+  <input id='sets' type='number' min='0' value="1"></input>
+
+  <label for='reps'>Reps:</label>
+  <input id='reps' type='number' min='0' value="10"></input>
   <button id="add">add</button>
 </div>
 

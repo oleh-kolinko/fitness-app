@@ -8,7 +8,7 @@ const userSchema = new Schema({
   goal: String,
   img: String,
   upvotes: Number,
-  workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
+  favorites: [String]//[{type: Schema.Types.ObjectId, ref: 'Workout'}],
 });
 
 userSchema.set('timestamps', true);

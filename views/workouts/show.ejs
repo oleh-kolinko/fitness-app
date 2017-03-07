@@ -1,5 +1,8 @@
 <!-- SHOW INDIVIDUAL WORKOUT PLAN -->
 <h1>Program: <%= workout.name %></h1>
+<h2>Upvotes: <%= workout.upvotes %></h2>
+
+<a href="/workouts/<%= workout._id %>/like">Like</a>
 
 Created by <%= owner.name %><a href="/users/<%= owner._id %> ">Link</a>
 
@@ -14,6 +17,8 @@ Created by <%= owner.name %><a href="/users/<%= owner._id %> ">Link</a>
 
     <a href='/exercises/<%= p.exercise %>'>
     <%= p.exercise %>
+    -
+    <%= p.reps %> reps
     </a>
   </p>
 

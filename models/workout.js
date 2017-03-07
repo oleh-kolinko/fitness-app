@@ -8,7 +8,7 @@ const workoutSchema = new Schema({
   upvotes: Number,
   plan: [{
       day: Number,
-      sets: Number,
+      reps: String,
       exercise: String,
     }],
 

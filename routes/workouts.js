@@ -44,7 +44,7 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
 
     newWorkout.plan.push({
       day: parseInt(req.body.day[i]),
-      sets: parseInt(req.body.sets[i]),
+      reps: req.body.reps[i],
       exercise: req.body.exercise[i],
     });
   }
@@ -73,6 +73,7 @@ router.get('/workouts/:id',(req,res,next)=>{
       if(err) return next(err);
 
       User.findById(resultWorkout.owner,(err,resultUser)=>{
+        if(err) return next(err);
 
         res.render('workouts/show',{
           week: week,
@@ -85,5 +86,59 @@ router.get('/workouts/:id',(req,res,next)=>{
     });
   });
 });
+
+router.get('/workouts/:id/like',ensure.ensureLoggedIn(),(req,res,next)=>{
+  const id = req.params.id;
+  const userId = req.user._id;
+  User.findOne({_id: userId},{favorites:true},(err,resultUser)=>{
+    if(err) return next(err);
+    const includes = resultUser.favorites.includes(id);
+
+    if(includes){//TRUE -> ALREADY IN FAVs
+      Workout.findById(id, (err,resultWorkout)=>{
+        if(err) return next(err);
+
+        //remove from favorites
+        var index = resultUser.favorites.indexOf(id);
+          if (index > -1) {
+              resultUser.favorites.splice(index, 1);
+          }
+          //decrese upvotes
+        resultWorkout.upvotes -- ;
+
+        resultUser.save((err)=>{
+          resultWorkout.save((save)=>{
+            res.redirect('/workouts/'+id);
+          });
+        });
+      });
+    }else{//FALSE -> LIKE
+      Workout.findById(id, (err,resultWorkout)=>{
+        if(err) return next(err);
+        //add to favorites and add upvote
+        resultUser.favorites.push(id);
+        resultWorkout.upvotes ++ ;
+
+        resultUser.save((err)=>{
+          resultWorkout.save((save)=>{
+            res.redirect('/workouts/'+id);
+          });
+        });
+      });
+    }
+
+  });
+});
+
+
+router.get('/workouts/:id/delete',ensure.ensureLoggedIn(),(req,res,next)=>{
+  const id = req.params.id;
+
+  Workout.findByIdAndRemove(id,(err,result)=>{
+    if(err) return next(err);
+    res.redirect(`/users/${req.user._id}`);
+  });
+});
+
 
 module.exports = router;

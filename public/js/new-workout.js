@@ -12,6 +12,7 @@
   $('#choose-exercise #add').click((e)=>{
     const newExercise = $('#exercise-selector').val();
     const newSets = $('#sets').val();
+    const newReps = $('#reps').val();
     console.log(newExercise);
 
     //VISIBLE
@@ -33,8 +34,8 @@
     //SETS
     $('<input>').attr({
       hidden: 'true',
-      value: newSets,
-      name: 'sets',
+      value: newSets+'x'+newReps,
+      name: 'reps',
     }).appendTo(`.day-box[data-day=${day}]`);
 
     $('#choose-exercise').hide();

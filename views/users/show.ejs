@@ -1,6 +1,6 @@
 <!-- Show user info -->
 <h2>User</h2>
- <a href="/logout"> Log Out </a> 
+ <a href="/logout"> Log Out </a>
 <p>
   Name : <%= user.name %>
 </p>
@@ -15,6 +15,7 @@
 </p>
 
 <!-- Show user created workouts -->
+
 <h2>User Workouts:</h2>
 <ul>
   <% workouts.forEach( workout =>{ %>
@@ -23,6 +24,12 @@
       <a href="/workouts/<%= workout._id %>">
         <%= workout.name %>
       </a>
+      <br>
+
+      <% if (myProfile){ %>
+        <a href="/workouts/<%= workout._id %>/delete">Delete</a>
+      <% } %>
+      
     </li>
   <% }) %>
 </ul>
