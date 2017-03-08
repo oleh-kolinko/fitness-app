@@ -65,7 +65,7 @@ const exercises = [
      Repeat for the recommended amount of repetitions.`
   },
   {
-    name: 'Rope Jumping',
+    name: 'Jump Roping',
     video: 'https://videocdn.bodybuilding.com/video/mp4/70000/71832m.mp4',
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/651/Male/m/651_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/651/Male/m/651_2.jpg',
@@ -100,6 +100,20 @@ const exercises = [
      Now, inhale and slowly lower yourself downward. Your torso should remain upright and your elbows should stay close to your body. This helps to better focus on tricep involvement. Lower yourself until there is a 90 degree angle formed between the upper arm and forearm.
      Then, exhale and push your torso back up using your triceps to bring your body back to the starting position.
      Repeat the movement for the prescribed amount of repetitions.`
+  },
+  {
+    name: 'Dumbbell Bench Press',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/38000/39001m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/1/Male/m/1_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/1/Male/m/1_2.jpg',
+    bodyOnly: false,
+    muscle: 'Chest',
+    description:
+    ` Lie down on a flat bench with a dumbbell in each hand resting on top of your thighs. The palms of your hands will be facing each other.
+Then, using your thighs to help raise the dumbbells up, lift the dumbbells one at a time so that you can hold them in front of you at shoulder width.
+Once at shoulder width, rotate your wrists forward so that the palms of your hands are facing away from you. The dumbbells should be just to the sides of your chest, with your upper arm and forearm creating a 90 degree angle. Be sure to maintain full control of the dumbbells at all times. This will be your starting position.
+Then, as you breathe out, use your chest to push the dumbbells up. Lock your arms at the top of the lift and squeeze your chest, hold for a second and then begin coming down slowly. Tip: Ideally, lowering the weight should take about twice as long as raising it.
+Repeat the movement for the prescribed amount of repetitions of your training program.`
   },
 ];
 
