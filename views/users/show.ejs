@@ -1,69 +1,97 @@
 <!-- Show user info -->
-<h2>User</h2>
- <a href="/logout"> Log Out </a>
-<p>
-  Name : <%= user.name %>
-</p>
-<p>
-  Goal : <%= user.goal %> weight
-</p>
-<p>
-  ImgUrl : <%= user.img %>
-</p>
-<p>
-  Upvotes : <%= user.upvotes %>
-</p>
+<div class="row user">
+  <div class="col s12 m6">
+    <div class="card-panel">
 
-<!-- SHOW TODAY AGENDA -->
-<% if (currentWO && myProfile){ %>
+      <div class="picker__wrap">
+        <img class='profile-picture circle z-depth-4' 
+        src="https://lh3.googleusercontent.com/-y9vU3BHc-xw/AAAAAAAAAAI/AAAAAAAAjgY/fb_G5jN3JjA/s640/photo.jpg" alt="">
+      </div>
+      <h1>
+        <%= user.name %>
+      </h1>
+      <p>
+        Goal : <%= user.goal %> weight
+      </p>
+      <p>
+        ImgUrl : <%= user.img %>
+      </p>
+      <p>
+        Upvotes : <%= user.upvotes %>
+      </p>
 
-  <h2>Things for today</h2>
-  <h3><%=week[currentDay]%></h3>
-  <% let restDay = true %>
-  <% currentWO.plan.forEach( w=>{ %>
-    <% if(w.day === currentDay){ %>
-      <% restDay = false %>
-    <div class="exercise">
-      <%= w.exercise %>
     </div>
-  <% }}) %>
-  <% if (restDay){ %>
-    <p>
-      Today is the rest day
-    </p>
-  <%}%>
-<% } else { %>
-  <!-- No program followed -->
-<% } %>
+  </div>
 
-<!-- Show user created workouts -->
+  <div class="col s12 m6">
+    <div class="card-panel">
+      <!-- SHOW TODAY AGENDA -->
+      <% if (currentWO && myProfile){ %>
 
-<h2>User Workouts:</h2>
-<ul>
-  <% workouts.forEach( workout =>{ %>
+        <h5>Things for today</h5>
+        <h6><%=week[currentDay]%></h6>
+        <% let restDay = true %>
+        <% currentWO.plan.forEach( w=>{ %>
+          <% if(w.day === currentDay){ %>
+            <% restDay = false %>
+            <div class="exercise">
+              <%= w.exercise %>
+            </div>
+            <% }}) %>
+            <% if (restDay){ %>
+              <p>
+                Today is the rest day
+              </p>
+              <%}%>
+              <% } else { %>
+                <!-- No program followed -->
+                <% } %>
 
-    <li>
-      <a href="/workouts/<%= workout._id %>">
-        <%= workout.name %>
-      </a>
+    </div>
+
+  </div>
+</div>
 
 
-      <% if (myProfile){ %>
-        <a href="/workouts/<%= workout._id %>/delete">x</a>
-      <% } %>
+<!-- Panel for workouts, favorites -->
+<div class="row card-panel">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a href="#test1"class="active">My workouts</a></li>
+        <li class="tab col s6"><a href="#test2">Favorites</a></li>
 
-    </li>
-  <% }) %>
-</ul>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">
+      <!-- User workouts -->
+      <ul>
+        <% workouts.forEach( workout =>{ %>
 
-<h2>Favorites:</h2>
-<ul>
-  <% favorites.forEach( fav =>{ %>
-    <li>
-      <a href="/workouts/<%= fav._id %>">
-        <%= fav.name %>
-      </a>
-      <a href="/follow/<%= fav._id %>">Follow</a>
-    </li>
-  <% }) %>
-</ul>
+          <li>
+            <a href="/workouts/<%= workout._id %>">
+              <%= workout.name %>
+            </a>
+
+
+            <% if (myProfile){ %>
+              <a href="/workouts/<%= workout._id %>/delete">x</a>
+            <% } %>
+
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+    <div id="test2" class="col s12">
+      <!-- Favorites -->
+      <ul>
+        <% favorites.forEach( fav =>{ %>
+          <li>
+            <a href="/workouts/<%= fav._id %>">
+              <%= fav.name %>
+            </a>
+            <a href="/follow/<%= fav._id %>">Follow</a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>

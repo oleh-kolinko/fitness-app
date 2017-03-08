@@ -44,6 +44,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
+
 //FOR sessions:
 app.use(session({
   secret: 'fitness-app',
@@ -88,6 +89,11 @@ passport.deserializeUser((id, cb) => {
 });
 
 //-----------------------ROUTES----------------------
+
+app.use('/',(req,res,next)=>{
+  res.locals.user = req.user;
+  next();
+});
 
 const index = require('./routes/index');
 app.use('/', index);

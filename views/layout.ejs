@@ -3,11 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    <nav>
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+    <!-- <nav>
       <ul>
         <li> <a href="/">Home </a> </li>
         <li> <a href="/users">ALL Users </a> </li>
@@ -16,14 +26,50 @@
         <li> <a href="/exercises"> ALL exercises </a> </li>
       </ul>
 
-    </nav>
+    </nav> -->
 
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <div class="brand-logo center">
+      <ul class="left hide-on-med-and-down">
 
-    <%- body -%>
+      <li>  <% if (user) { %>
+          <a href="/users/<%= user._id %>"><%= user.name %></a>
 
+            </li>
+        <li> <a href="/logout">LOGOUT</a> </li>
+        <% } else {%>
+          <li> <a href="/login">LOGIN</a> </li>
+        <% }  %>
+
+        <li> <a href="/users">PEOPLE</a> </li>
+        <li> <a href="/workouts">WORKOUTS</a> </li>
+        <li> <a href="/exercises">EXERCISES</a> </li>
+    </ul>
+  </div>
+
+    <ul class="side-nav" id="mobile-demo">
+      <li> <a href="/">HOME</a> </li>
+      <li> <a href="/users">PEOPLE</a> </li>
+      <li> <a href="/workouts">WORKOUTS</a> </li>
+      <li> <a href="/exercises">EXERCISES</a> </li>
+    </ul>
+  </div>
+</nav>
+
+      <div class="container">
+        <div id ='main-content' class="row">
+
+          <%- body -%>
+        </div>
+      </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+    <script src='/js/main.js'>
+    </script>
   </body>
 </html>

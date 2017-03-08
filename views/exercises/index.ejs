@@ -1,10 +1,11 @@
 <h2>All exercises:</h2>
-<ul>
+
   <% exercises.forEach( exercise =>{ %>
-    <li>
-      <a href="/exercises/<%= exercise.name %>">
+
+    <a href="exercises/<%= exercise.name %>">
+    <div class='card-panel  z-depth-1'>
         <%= exercise.name %>
-      </a>
-    </li>
+    </div>
+  </a>
+
   <% }) %>
-</ul>

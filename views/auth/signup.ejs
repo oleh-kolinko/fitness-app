@@ -7,32 +7,29 @@
 <% } %>
 
 <form action="/signup" method="post">
-  <div>
+  <div class='input-field'>
     <label for="name-input"> Name </label>
     <input type="text" name="name" id="name-input"
-      placeholder="e.g. Oleh Kolinko">
   </div>
 
-  <div>
+  <div class='input-field'>
     <label for="username-input"> Username </label>
-    <input type="username" name="username" id="username-input"
-      placeholder="e.g., diana@themyscira.agency">
+    <input type="text" name="username" id="username-input"
   </div>
 
-  <div>
+  <div class='input-field'>
     <label for="password-input"> Password </label>
     <input type="password" name="password" id="password-input"
-      placeholder="e.g., ••••••••••••">
   </div>
 
-  <div>
+  <div class='input-field'>
     <select class="" name="goal">
       <option value="gain">Gain weight</option>
       <option value="lose">Lose weight</option>
     </select>
   </div>
 
-  <button> Create New Account </button>
+  <button class='waves-effect waves-light btn'> Create New Account </button>
 </form>
 
 <p>

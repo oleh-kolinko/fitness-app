@@ -1,12 +1,12 @@
 <h2>All workouts:</h2>
-<ul>
+
   <% workouts.forEach( workout =>{ %>
 
-    <li>
-      <a href="workouts/<%= workout._id %>">
+    <a href="workouts/<%= workout._id %>">
+    <div class='card-panel'>
+      
         <%= workout.name %>
-      </a>
-    </li>
-    
+    </div>
+  </a>
+
   <% }) %>
-</ul>

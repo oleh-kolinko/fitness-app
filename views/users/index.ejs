@@ -1,14 +1,11 @@
-<h2>All users:</h2>
-<ul>
+<h2>All workouts:</h2>
+
   <% users.forEach( user =>{ %>
-    
-    <li>
-      <a href="users/<%= user._id %>">
-      <p>
+
+    <a href="users/<%= user._id %>">
+    <div class='card-panel  z-depth-1'>
         <%= user.name %>
-      </p>
-    </a>
-  </li>
+    </div>
+  </a>
 
   <% }) %>
-</ul>

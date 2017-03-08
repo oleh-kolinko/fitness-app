@@ -1,17 +1,17 @@
 <!-- SHOW INDIVIDUAL WORKOUT PLAN -->
-<h1>Program: <%= workout.name %></h1>
-<h2>Upvotes: <%= workout.upvotes %></h2>
+<h1><%= workout.name %></h1>
+<h5>Upvotes: <%= workout.upvotes %></h5>
 
 <a href="/workouts/<%= workout._id %>/like">Like</a>
 
 Created by <%= owner.name %><a href="/users/<%= owner._id %> ">Link</a>
 
 <% let currentDay = workout.plan[0].day  %>
-<h2><%= week[currentDay] %></h2>
+<h5><%= week[currentDay] %></h5>
 <% workout.plan.forEach(p =>{  %>
   <% if(p.day > currentDay){ %>
   <%  currentDay =p.day %>
-    <h2><%= week[currentDay] %></h2>
+    <h5><%= week[currentDay] %></h5>
   <% } %>
   <p>
 
