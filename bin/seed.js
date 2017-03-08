@@ -91,6 +91,21 @@ const exercises = [
   {
     name: 'Dips',
     video: 'https://videocdn.bodybuilding.com/video/mp4/52000/53961m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/3153/Male/m/3153_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/3153/Male/m/3153_2.jpg',
+    bodyOnly: true,
+    muscle: 'Quadriceps',
+    description:
+    ` Begin standing with your legs shoulder-width apart.
+Place your hands on the floor and kick your legs back so you end up with your stomach and thighs on the floor. Your elbows should be bent.
+From this position, press up like you're doing a push-up and push your hips up.
+Jump your feet under your hips and stand.
+Finish the movement by jumping in the air and bringing your hands over your head.
+Repeat.`
+  },
+  {
+    name: 'Burpee',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/118000/118171m.mp4',
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/55/Male/m/55_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/55/Male/m/55_2.jpg',
     bodyOnly: true,
