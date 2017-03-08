@@ -105,16 +105,174 @@ Repeat.`
   },
   {
     name: 'Burpee',
-    video: 'https://videocdn.bodybuilding.com/video/mp4/118000/118171m.mp4',
-    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/55/Male/m/55_1.jpg',
-    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/55/Male/m/55_2.jpg',
+    video: 'http://videocdn.bodybuilding.com/video/mp4/118000/118171m.mp4',
+    img1: 'http://www.bodybuilding.com/exercises/exerciseImages/sequences/3153/Male/m/3153_1.jpg',
+    img2: 'http://www.bodybuilding.com/exercises/exerciseImages/sequences/3153/Male/m/3153_2.jpg',
     bodyOnly: true,
-    muscle: 'Traps',
+    muscle: 'Quadriceps',
     description:
-    ` To get into the starting position, hold your body at arm's length with your arms nearly locked above the bars.
-     Now, inhale and slowly lower yourself downward. Your torso should remain upright and your elbows should stay close to your body. This helps to better focus on tricep involvement. Lower yourself until there is a 90 degree angle formed between the upper arm and forearm.
-     Then, exhale and push your torso back up using your triceps to bring your body back to the starting position.
-     Repeat the movement for the prescribed amount of repetitions.`
+    ` Begin standing with your legs shoulder-width apart.
+Place your hands on the floor and kick your legs back so you end up with your stomach and thighs on the floor. Your elbows should be bent.
+From this position, press up like you're doing a push-up and push your hips up.
+Jump your feet under your hips and stand.
+Finish the movement by jumping in the air and bringing your hands over your head.
+Repeat.`
+  },
+  {
+    name: 'Jefferson Squats',
+    video: 'http://videocdn.bodybuilding.com/video/mp4/40000/40421m.mp4',
+    img1: 'http://www.bodybuilding.com/exercises/exerciseImages/sequences/283/Male/m/283_1.jpg',
+    img2: 'http://www.bodybuilding.com/exercises/exerciseImages/sequences/283/Male/m/283_2.jpg',
+    bodyOnly: false,
+    muscle: 'Quadriceps',
+    description:
+    ` Begin standing with your legs shoulder-width apart.
+Place your hands on the floor and kick your legs back so you end up with your stomach and thighs on the floor. Your elbows should be bent.
+From this position, press up like you're doing a push-up and push your hips up.
+Jump your feet under your hips and stand.
+Finish the movement by jumping in the air and bringing your hands over your head.
+Repeat.`
+  },
+  {
+    name: 'Butt Lift (Bridge)',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/38000/38531m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/99/Male/m/99_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/99/Male/m/99_2.jpg',
+    bodyOnly: true,
+    muscle: 'Glutes',
+    description:
+    `Lie flat on the floor on your back with the hands by your side and your knees bent. Your feet should be placed around shoulder width. This will be your starting position.
+Pushing mainly with your heels, lift your hips off the floor while keeping your back straight. Breathe out as you perform this part of the motion and hold at the top for a second.
+Slowly go back to the starting position as you breathe in.`
+  },
+  {
+    name: '90/90 Hamstring',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/58000/59582m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/578/Male/m/578_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/578/Male/m/578_2.jpg',
+    bodyOnly: true,
+    muscle: 'Hamstrings',
+    description:
+    `Lie on your back, with one leg extended straight out.
+With the other leg, bend the hip and knee to 90 degrees. You may brace your leg with your hands if necessary. This will be your starting position.
+Extend your leg straight into the air, pausing briefly at the top. Return the leg to the starting position.
+Repeat for 10-20 repetitions, and then switch to the other leg.`
+  },
+  {
+    name: 'Child\'s Pose',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/58000/59742m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/426/Male/m/426_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/426/Male/m/426_2.jpg',
+    bodyOnly: true,
+    muscle: 'Lower Back',
+    description:
+    `Get on your hands and knees, walk your hands in front of you.
+Lower your buttocks down to sit on your heels. Let your arms drag along the floor as you sit back to stretch your entire spine.
+Once you settle onto your heels, bring your hands next to your feet and relax. "breathe" into your back.
+Rest your forehead on the floor. Avoid this position if you have knee problems.`
+  },
+  {
+    name: 'Superman',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/40000/41971m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/228/Male/m/228_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/228/Male/m/228_2.jpg',
+    bodyOnly: true,
+    muscle: 'Lower Back',
+    description:
+    `To begin, lie straight and face down on the floor or exercise mat. Your arms should be fully extended in front of you. This is the starting position.
+Simultaneously raise your arms, legs, and chest off of the floor and hold this contraction for 2 seconds. Tip: Squeeze your lower back to get the best results from this exercise. Remember to exhale during this movement. Note: When holding the contracted position, you should look like superman when he is flying.
+Slowly begin to lower your arms, legs and chest back down to the starting position while inhaling.
+Repeat for the recommended amount of repetitions prescribed in your program.`
+  },
+  {
+    name: 'Atlas Stones',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/76000/76452m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/659/Male/m/659_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/659/Male/m/659_2.jpg',
+    bodyOnly: false,
+    muscle: 'Lower Back',
+    description:
+    `Begin with the atlas stone between your feet. Bend at the hips to wrap your arms vertically around the Atlas Stone, attempting to get your fingers underneath the stone. Many stones will have a small flat portion on the bottom, which will make the stone easier to hold.
+Pulling the stone into your torso, drive through the back half of your feet to pull the stone from the ground.
+As the stone passes the knees, lap it by sitting backward, pulling the stone on top of your thighs.
+Sit low, getting the stone high onto your chest as you change your grip to reach over the stone.
+Stand, driving through with your hips. Close distance to the loading platform, and lean back, extending
+the hips to get the stone as high as possible.`
+  },
+  {
+    name: 'Spinal Stretch',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/60000/60692m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/481/Male/m/481_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/481/Male/m/481_2.jpg',
+    bodyOnly: true,
+    muscle: 'Middle Back',
+    description:
+    `Sit in a chair so your back is straight and your feet planted on the floor.
+Interlace your fingers behind your head, elbows out and your chin down.
+Twist your upper body to one side about 3 times as far as you can. Then lean forward and twist your torso to reach your elbow to the floor on the inside of your knee.
+Return to upright position and then repeat for your other side.`
+  },
+  {
+    name: 'One Arm Against Wall',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/60000/60232m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/478/Male/m/478_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/478/Male/m/478_2.jpg',
+    bodyOnly: true,
+    muscle: 'Lats',
+    description:
+    `From a standing position, place a bent arm against a wall or doorway.
+Slowly lean toward your arm until you feel a stretch in your lats.`
+  },
+  {
+    name: 'Dynamic Back Stretch',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/58000/59792m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/586/Male/m/586_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/586/Male/m/586_2.jpg',
+    bodyOnly: true,
+    muscle: 'Lats',
+    description:
+    `Stand with your feet shoulder width apart. This will be your starting position.
+Keeping your arms straight, swing them straight up in front of you 5-10 times, increasing the range of motion each time until your arms are above your head.`
+  },
+  {
+    name: 'Weighted Pull Ups',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/90000/91102m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/928/Male/m/928_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/928/Male/m/928_2.jpg',
+    bodyOnly: false,
+    muscle: 'Lats',
+    description:
+    `Attach a weight to a dip belt and secure it around your waist. Grab the pull-up bar with the palms of your hands facing forward. For a medium grip, your hands should be spaced at shoulder width. Both arms should be extended in front of you holding the bar at the chosen grip.
+Youâ€™ll want to bring your torso back about 30 degrees while creating a curvature in your lower back and sticking your chest out. This will be your starting position.
+Now, exhale and pull your torso up until your head is above your hands. Concentrate on squeezing yourshoulder blades back and down as you reach the top contracted position.
+After a brief moment at the top contracted position, inhale and slowly lower your torso back to the starting position with your arms extended and your lats fully stretched.`
+  },
+  {
+    name: 'Shotgun Row',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/104000/105202m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/1971/Male/m/1971_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/1971/Male/m/1971_2.jpg',
+    bodyOnly: false,
+    muscle: 'Lats',
+    description:
+    `Attach a single handle to a low cable.
+After selecting the correct weight, stand a couple feet back with a wide-split stance. Your arm should be extended and your shoulder forward. This will be your starting position.
+Perform the movement by retracting the shoulder and flexing the elbow. As you pull, supinate the wrist, turning the palm upward as you go.
+After a brief pause, return to the starting position.`
+  },
+  {
+    name: 'Rope Climb',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/100000/100322m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/1441/Male/m/1441_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/1441/Male/m/1441_2.jpg',
+    bodyOnly: false,
+    muscle: 'Lats',
+    description:
+    `Grab the rope with both hands above your head. Pull down on the rope as you take a small jump.
+Wrap the rope around one leg, using your feet to pinch the rope. Reach up as high as possible with your arms, gripping the rope tightly.
+Release the rope from your feet as you pull yourself up with your arms, bringing your knees towards your chest.
+Resecure your feet on the rope, and then stand up to take another high hold on the rope. Continue until you reach the top of the rope.
+To lower yourself, loosen the grip of your feet on the rope as you slide down using a hand over hand motion.`
   },
 ];
 
