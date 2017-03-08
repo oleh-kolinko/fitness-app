@@ -14,6 +14,28 @@
   Upvotes : <%= user.upvotes %>
 </p>
 
+<!-- SHOW TODAY AGENDA -->
+<% if (currentWO && myProfile){ %>
+
+  <h2>Things for today</h2>
+  <h3><%=week[currentDay]%></h3>
+  <% let restDay = true %>
+  <% currentWO.plan.forEach( w=>{ %>
+    <% if(w.day === currentDay){ %>
+      <% restDay = false %>
+    <div class="exercise">
+      <%= w.exercise %>
+    </div>
+  <% }}) %>
+  <% if (restDay){ %>
+    <p>
+      Today is the rest day
+    </p>
+  <%}%>
+<% } else { %>
+  <!-- No program followed -->
+<% } %>
+
 <!-- Show user created workouts -->
 
 <h2>User Workouts:</h2>
@@ -24,12 +46,24 @@
       <a href="/workouts/<%= workout._id %>">
         <%= workout.name %>
       </a>
-      <br>
+
 
       <% if (myProfile){ %>
-        <a href="/workouts/<%= workout._id %>/delete">Delete</a>
+        <a href="/workouts/<%= workout._id %>/delete">x</a>
       <% } %>
-      
+
+    </li>
+  <% }) %>
+</ul>
+
+<h2>Favorites:</h2>
+<ul>
+  <% favorites.forEach( fav =>{ %>
+    <li>
+      <a href="/workouts/<%= fav._id %>">
+        <%= fav.name %>
+      </a>
+      <a href="/follow/<%= fav._id %>">Follow</a>
     </li>
   <% }) %>
 </ul>

@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 const exerciseSchema = new Schema({
   name: String,
   video: String,
+  img1: String,
+  img2: String,
+  bodyOnly: Boolean,
   muscle: String,
   description: String
 });

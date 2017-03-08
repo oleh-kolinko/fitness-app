@@ -6,10 +6,10 @@ const User = require('../models/user');
 const ensure = require('connect-ensure-login');//check if user is logged in?
 
 
-const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const week = [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 router.get('/workouts',(req,res,next)=>{
-  Workout.find((err,result)=>{
+  Workout.find({},{},{sort: {upvotes: -1}},(err,result)=>{
     if(err) return next(err);
 
     res.render('workouts/index',{
@@ -106,11 +106,20 @@ router.get('/workouts/:id/like',ensure.ensureLoggedIn(),(req,res,next)=>{
           //decrese upvotes
         resultWorkout.upvotes -- ;
 
-        resultUser.save((err)=>{
-          resultWorkout.save((save)=>{
-            res.redirect('/workouts/'+id);
+        //Find owner and decrese his upvotes
+        User.findById(resultWorkout.owner, (err, resultOwner)=>{
+          if(err) return next(err);
+          resultOwner.upvotes --;
+          resultOwner.save(err=>{
+
+            resultUser.save((err)=>{
+              resultWorkout.save((save)=>{
+                res.redirect('/workouts/'+id);
+              });
+            });
           });
         });
+
       });
     }else{//FALSE -> LIKE
       Workout.findById(id, (err,resultWorkout)=>{
@@ -119,11 +128,21 @@ router.get('/workouts/:id/like',ensure.ensureLoggedIn(),(req,res,next)=>{
         resultUser.favorites.push(id);
         resultWorkout.upvotes ++ ;
 
-        resultUser.save((err)=>{
-          resultWorkout.save((save)=>{
-            res.redirect('/workouts/'+id);
+        //Find owner and increse his upvotes
+        User.findById(resultWorkout.owner, (err, resultOwner)=>{
+          if(err) return next(err);
+          resultOwner.upvotes ++;
+          resultOwner.save(err=>{
+
+            resultUser.save((err)=>{
+              resultWorkout.save((save)=>{
+                res.redirect('/workouts/'+id);
+              });
+            });
+
           });
         });
+
       });
     }
 
@@ -139,6 +158,5 @@ router.get('/workouts/:id/delete',ensure.ensureLoggedIn(),(req,res,next)=>{
     res.redirect(`/users/${req.user._id}`);
   });
 });
-
 
 module.exports = router;

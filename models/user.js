@@ -7,8 +7,9 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   goal: String,
   img: String,
-  upvotes: Number,
-  favorites: [String]//[{type: Schema.Types.ObjectId, ref: 'Workout'}],
+  upvotes: {type: Number, default: 0},
+  favorites: [String],//[{type: Schema.Types.ObjectId, ref: 'Workout'}],
+  currentWO: String,
 });
 
 userSchema.set('timestamps', true);
