@@ -1,25 +1,51 @@
 <!-- SHOW INDIVIDUAL WORKOUT PLAN -->
-<h1><%= workout.name %></h1>
-<h5>Upvotes: <%= workout.upvotes %></h5>
 
-<a href="/workouts/<%= workout._id %>/like">Like</a>
 
-Created by <%= owner.name %><a href="/users/<%= owner._id %> ">Link</a>
+<div class="card">
+  <div class="card-content">
+    <h3><%= workout.name %></h3>
+    <h5>Upvotes: <%= workout.upvotes %></h5>
+    <a href="/workouts/<%= workout._id %>/like">Like</a>
 
-<% let currentDay = workout.plan[0].day  %>
-<h5><%= week[currentDay] %></h5>
-<% workout.plan.forEach(p =>{  %>
-  <% if(p.day > currentDay){ %>
-  <%  currentDay =p.day %>
-    <h5><%= week[currentDay] %></h5>
-  <% } %>
-  <p>
+    <p>Created by <%= owner.name %> <a href="/users/<%= owner._id %> ">Link</a></p>
+  </div>
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a href="#tab0" class="active" >Sunday</a></li>
+      <li class="tab"><a href="#tab1">Monday</a></li>
+      <li class="tab"><a href="#tab2">Tuesday</a></li>
+      <li class="tab"><a href="#tab3">Wednesday</a></li>
+      <li class="tab"><a href="#tab4">Thursday</a></li>
+      <li class="tab"><a href="#tab5">Friday</a></li>
+      <li class="tab"><a href="#tab6">Saturday</a></li>
+    </ul>
+  </div>
+  <div class="card-content grey lighten-4">
+    <div id='tab0'></div>
+    <div id='tab1'></div>
+    <div id='tab2'></div>
+    <div id='tab3'></div>
+    <div id='tab4'></div>
+    <div id='tab5'></div>
+    <div id='tab6'></div>
 
-    <a href='/exercises/<%= p.exercise %>'>
-    <%= p.exercise %>
-    -
-    <%= p.reps %> reps
-    </a>
-  </p>
+  </div>
 
+</div>
+
+<% workout.plan.forEach( (p,i)=>{ %>
+  <div class='exercise' data-day='<%= p.day %>'>
+  <a href="/exercises/<%= p.exercise %>"><%= p.exercise %></a>
+  <span>( <%= p.reps %> REPS)</span>
+  </div>
 <% }) %>
+
+
+<script type="text/javascript">
+    let exercises = $('.exercise');
+    for(let i =0; i < exercises.length; i++){
+      const day = $(exercises[i]).attr('data-day');
+      $(exercises[i]).appendTo(`#tab${day}`);
+    }
+
+</script>

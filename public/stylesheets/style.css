@@ -1,6 +1,9 @@
 body {
-  background: #f9f9f9;
+  background: #3498DB;
   text-align: center;
+}
+nav{
+  background-color: #1ABC9C;
 }
 
 a {
@@ -39,4 +42,7 @@ a {
   top: -70px;
   margin-bottom: -100px;
   position: relative;
+}
+select{
+  display: block;
 }
