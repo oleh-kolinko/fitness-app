@@ -2,12 +2,24 @@
 
 <a href='/workouts/new' id='add-new-workout-link' class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">add</i></a>
 <div class="card">
-  <div class="card-content">
-    <h3><%= workout.name %></h3>
-    <h5>Upvotes: <%= workout.upvotes %></h5>
-    <a href="/workouts/<%= workout._id %>/like">Like</a>
+  <!-- <div class="col s4 card-image">
+          <img src="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg">
 
-    <p>Created by <%= owner.name %> <a href="/users/<%= owner._id %> ">Link</a></p>
+        </div> -->
+  <div class="card-content">
+    <div class="col s4">
+      <h3><%= workout.name %></h3>
+      <p>Created by  <a href="/users/<%= owner._id %> "><%= owner.name %></a></p>
+    </div>
+    <div class="col s4">
+      <h5>Upvotes: <%= workout.upvotes %></h5>
+      <a href="/workouts/<%= workout._id %>/like">Like</a>
+    </div>
+    <div class="col s4">
+      <p><%= workout.description %></p>
+
+    </div>
+
   </div>
   <div class="card-tabs">
     <ul class="tabs tabs-fixed-width">

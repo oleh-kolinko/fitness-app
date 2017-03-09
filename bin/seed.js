@@ -80,8 +80,8 @@ const exercises = [
   {
     name: 'PUSHUPS',
     video: 'https://videocdn.bodybuilding.com/video/mp4/40000/40811m.mp4',
-    img1: 'http://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/l/70_1.jpg',
-    img2: 'http://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/l/70_2.jpg',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/m/70_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/m/70_1.jpg',
     bodyOnly: true,
     muscle: 'Chest',
     description:

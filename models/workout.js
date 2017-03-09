@@ -13,6 +13,7 @@ const workoutSchema = new Schema({
     }],
 
   goal: String,
+  description: String
 });
 
 

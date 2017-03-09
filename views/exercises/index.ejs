@@ -1,11 +1,23 @@
 <h2>ALL EXERCISES:</h2>
 
   <% exercises.forEach( exercise =>{ %>
+    <div class="col xs12 s6 m4 l3">
+      <a href="exercises/<%= exercise.name %>">
+      <div class="card hoverable">
+        <div class="card-image">
+          <img src="<%= exercise.img1 %>">
+          <span class="card-title"><%= exercise.name %></span>
+        </div>
+        <div class="card-content">
+          <p><%= exercise.muscle %> </p>
+          </div>
 
-    <a href="exercises/<%= exercise.name %>">
-    <div class='card-panel  z-depth-1'>
-        <%= exercise.name %>
+        </div>
+        </a>
     </div>
-  </a>
+
+    <!-- <div class='card-panel  z-depth-1'>
+        <%= exercise.name %>
+    </div> -->
 
   <% }) %>
