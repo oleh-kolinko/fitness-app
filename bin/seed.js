@@ -36,7 +36,7 @@ const exercises = [
      Repeat for the recommended amount of repetitions.`
   },
   {
-    name: 'Jump Roping',
+    name: 'Rope Jumping',
     video: 'https://videocdn.bodybuilding.com/video/mp4/70000/71832m.mp4',
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/651/Male/m/651_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/651/Male/m/651_2.jpg',

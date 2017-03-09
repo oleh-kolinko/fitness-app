@@ -21,22 +21,22 @@
     </ul>
   </div>
   <div class="card-content grey lighten-4">
-    <div id='tab0'></div>
-    <div id='tab1'></div>
-    <div id='tab2'></div>
-    <div id='tab3'></div>
-    <div id='tab4'></div>
-    <div id='tab5'></div>
-    <div id='tab6'></div>
+    <div id='tab0' class='col s12'></div>
+    <div id='tab1' class='col s12'></div>
+    <div id='tab2' class='col s12'></div>
+    <div id='tab3' class='col s12'></div>
+    <div id='tab4' class='col s12'></div>
+    <div id='tab5' class='col s12'></div>
+    <div id='tab6' class='col s12'></div>
 
   </div>
 
 </div>
 
 <% workout.plan.forEach( (p,i)=>{ %>
-  <div class='exercise' data-day='<%= p.day %>'>
+  <div class='exercise' data-day='<%= p.day %>' hidden>
   <a href="/exercises/<%= p.exercise %>"><%= p.exercise %></a>
-  <span>( <%= p.reps %> REPS)</span>
+  <span class='chip'> <%= p.reps %> REPS</span>
   </div>
 <% }) %>
 
@@ -45,7 +45,7 @@
     let exercises = $('.exercise');
     for(let i =0; i < exercises.length; i++){
       const day = $(exercises[i]).attr('data-day');
-      $(exercises[i]).appendTo(`#tab${day}`);
+      $(exercises[i]).show().appendTo(`#tab${day}`);
     }
 
 </script>
