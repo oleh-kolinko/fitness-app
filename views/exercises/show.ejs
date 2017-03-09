@@ -1,24 +1,31 @@
-<h2>Exercise</h2>
+<div class="card-panel z-depth-3">
+  <div class="row">
 
-<h3>
-  <%= exercise.name %>
-</h3>
+    <h3>
+      <%= exercise.name %>
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col s12 m6 exercise-img">
+      <img src="<%= exercise.img1 %>" alt="exercise-pic">
+      <img src="<%= exercise.img2 %>" alt="exercise-pic">
+      <span class='chip'>Main muscle worked: <b><%= exercise.muscle %></b></span>
+    </div>
+    <div class="col s12 m6">
+      <video width="99%" class='z-depth-2' controls>
+        <source src="<%= exercise.video %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+  </div>
+  <div class="row">
+    <div class='col s1'>
 
-<p>
-  <%= exercise.goal %>
-</p>
+    </div>
 
-<p>
-  <%= exercise.description %>
-</p>
+    <div class='col s10'>
+      <%= exercise.description %>
+    </div>
 
-<p>
-  <img src="<%= exercise.img1 %>" alt="exercise-pic">
-  <img src="<%= exercise.img2 %>" alt="exercise-pic">
-</p>
-<p>
-  <video width="320" height="240" controls>
-  <source src="<%= exercise.video %>" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>
-</p>
+  </div>
+</div>

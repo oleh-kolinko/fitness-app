@@ -299,7 +299,7 @@ const exercises = [
     After a brief pause, return to the starting position.`
   },
   {
-    name: '3/4 Sit-Up',
+    name: '3-4 Sit-Up',
     video: 'https://videocdn.bodybuilding.com/video/mp4/104000/105232m.mp4',
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/2001/Male/m/2001_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/2001/Male/m/2001_2.jpg',

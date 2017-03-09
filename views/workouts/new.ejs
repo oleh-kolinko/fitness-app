@@ -1,49 +1,95 @@
-<h2> Create workout </h2>
+<h2> CREATE WORKOUT </h2>
+<div class="card">
+  <form id="new-workout-form" action="/workouts/new" method="post">
 
-
-<form id="new-workout-form" action="/workouts/new" method="post">
-
-  <label for='name'>Workout Name:</label>
-  <input id='name' name='name' required></input>
-
-  <select class="" name="goal">
-    <option value="Gain weight">Gain weight</option>
-    <option value="Lose weight">Lose weight</option>
-  </select>
-
-
-
-  <% week.forEach((day,i) => { %>
-
-
-    <div class='day-box' data-day='<%= i %>'>
-      <h2>
-        <%= day %>
-      </h2>
-
-      <div class="add-exercise">
-        Add Exercise
-      </div>
-
+  <div class="card-content">
+    <div class="input-field col s6">
+      <label for='name'>Workout Name:</label>
+      <input id='name' class='validate' type='text' name='name' required></input>
+    </div>
+    <div class="input-field col s6">
+      <select id='goal-select' class="" name="goal">
+        <option value="Gain weight">Gain weight</option>
+        <option value="Lose weight">Lose weight</option>
+      </select>
     </div>
 
-  <% }) %>
-  <button>Submit</button>
+  </div>
+  <div class="card-tabs">
+    <ul class="tabs tabs-fixed-width">
+      <li class="tab"><a href="#tab0" class="active" >Sunday</a></li>
+      <li class="tab"><a href="#tab1">Monday</a></li>
+      <li class="tab"><a href="#tab2">Tuesday</a></li>
+      <li class="tab"><a href="#tab3">Wednesday</a></li>
+      <li class="tab"><a href="#tab4">Thursday</a></li>
+      <li class="tab"><a href="#tab5">Friday</a></li>
+      <li class="tab"><a href="#tab6">Saturday</a></li>
+    </ul>
+  </div>
+  <div class="card-content grey lighten-4">
+    <div id='tab0' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='0' hidden="true">
+        Add Exercise
+      </div>
+    </div>
+    <div id='tab1' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='1' hidden='true'>
+        Add Exercise
+      </div>
+    </div>
+    <div id='tab2' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='2' hidden='true'>
+        Add Exercise
+      </div>
+    </div>
+    <div id='tab3' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='3' hidden='true'>
+        Add Exercise
+      </div>
+    </div>
+    <div id='tab4' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='4' hidden='true'>
+        Add Exercise
+      </div>
+    </div>
+    <div id='tab5' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='5' hidden='true'>
+        Add Exercise
+      </div>
+    </div>
+    <div id='tab6' class='col s12'>
+      <div class="waves-effect waves-light btn red add-exercise" data-day='6' hidden='true'>
+        Add Exercise
+      </div>
+    </div>
+
+  </div>
+</div>
+<button id='new-workout-send'class='btn-floating btn-large waves-effect waves-light red'>
+  <i class="material-icons red">send</i></button>
 </form>
 
-<div id="choose-exercise" hidden>
+
+
+
+<div id="choose-exercise" class='card-panel hoverable' hidden>
   <select id='exercise-selector' name="">
     <% exercises.forEach(e=>{ %>
       <option value="<%= e.name %>"><%= e.name %></option>
     <% }) %>
   </select>
-  <br>
-  <label for='sets'>Sets:</label>
-  <input id='sets' type='number' min='0' value="1"></input>
-  <br>
-  <label for='reps'>Reps:</label>
-  <input id='reps' type='number' min='0' value="10"></input>
-  <button id="add">add</button>
+  <div class="input-field">
+    <label for='sets'>Sets:</label>
+    <input id='sets' type='number' min='0' value="1"></input>
+  </div>
+  <div class="input-field">
+    <label for='reps'>Reps:</label>
+    <input id='reps' type='number' min='0' value="10"></input>
+
+  </div>
+  <button id="add" class="btn-floating btn-large waves-effect waves-light red hoverable ">
+    <i class="material-icons">add</i></button>
 </div>
 
 <script src='/js/new-workout.js'></script>
+<script src='/js/main.js'></script>

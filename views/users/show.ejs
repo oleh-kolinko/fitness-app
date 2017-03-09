@@ -74,7 +74,9 @@
 
 
             <% if (myProfile){ %>
-              <a href="/workouts/<%= workout._id %>/delete">x</a>
+              <a href="/workouts/<%= workout._id %>/delete" class='waves-effect waves-red btn-flat'>
+              <i class="material-icons">delete_forever</i>
+            </a>
             <% } %>
 
           </li>
@@ -89,7 +91,10 @@
             <a href="/workouts/<%= fav._id %>">
               <%= fav.name %>
             </a>
-            <a href="/follow/<%= fav._id %>">Follow</a>
+            <a href="/follow/<%= fav._id %>" class='waves-effect waves-red btn-flat'>
+            Follow
+            
+          </a>
           </li>
         <% }) %>
       </ul>
