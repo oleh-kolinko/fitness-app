@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');//get mongoose
+// mongoose.connect(process.env.MONGODB_URI);//connect to DB
 mongoose.connect('mongodb://localhost/fitness-app');//connect to DB
 
 const Exercise = require('../models/exercise');//get product model from /models/product.js
 const Workout = require('../models/workout');//get product model from /models/product.js
+const User = require('../models/user');//get product model from /models/product.js
 
 const exercises = [
 
@@ -695,6 +697,155 @@ const exercises = [
 
 ];
 
+const users = [
+
+  {
+    name: 'Nizar Khalife Iglesias',
+    username: 'Nizar',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/khalifenizar/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/000/238/180/0167f99.jpg',
+  },
+  {
+    name: 'Daniel Brito',
+    username: 'DanielB',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/dbrito1/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAZbAAAAJGE3NDA3ZDU4LWUzZmUtNDE5ZS1hMDRmLWU5N2NmOTQ2MjNjNg.jpg',
+  },
+  {
+    name: 'Alina Gasperino',
+    username: 'Alina',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/alinagasperino/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAu3AAAAJDllMTc5NWQzLWVjZWYtNGNlOS05ZWFiLTA4ODY2MjgyNjFkYw.jpg',
+  },
+  {
+    name: 'Jean Zune',
+    username: 'Jean',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/jeanpaulzune/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdmAAAAJDQ5MDA5YWFhLTBiMjYtNGUzMC1hMmYyLTU1ZmNjYzIzNDlhNg.jpg',
+  },
+  {
+    name: 'Kevin Da Silva',
+    username: 'Kevin',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/kevinds-/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA2oAAAAJGMwMWY1ZTljLTZkNTgtNGMwYi1iYzFkLTM5YTczZDEzZTM1Yw.jpg',
+  },
+  {
+    name: 'Oscar Guerrero',
+    username: 'Oscar',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/itsoscarg/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA0sAAAAJDhiZThiOTA2LTg1ZDAtNGMxZS1iZDNiLTU1ZmUwNTIyYmU4ZQ.jpg',
+  },
+  {
+    name: 'Marlon Martinez',
+    username: 'Marlon',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/marlon-martinez/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAu5AAAAJGE5NWVlODI0LWMwNWYtNDI0Zi05YjRkLTBhMTlmOTE4N2VjZg.jpg',
+  },
+  {
+    name: 'Walter Monecke',
+    username: 'Walter',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/walter-monecke/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAWVAAAAJDc1YTlkNjg3LTk1NmUtNGMzNy1iNjU5LTU0YjY0MTdjODE4YQ.jpg',
+  },
+  {
+    name: 'Jeremy Beagle',
+    username: 'Jeremy',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/jeremy-beagle/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAezAAAAJDg3Y2Q4MWJlLWNkYzAtNDNiMC04MjI0LTY3OWY0NjNiYmQzNg.jpg',
+  },
+  {
+    name: 'Doyen Brown',
+    username: 'Doyen',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/doyennealbrown/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAtkAAAAJGNjMWQzZTA5LWFjNTgtNGM3Ny04MTJhLWVlMWEwOWRlYTRmNQ.jpg',
+  },
+  {
+    name: 'Javier Cueto',
+    username: 'Javier',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/javiercueto/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA2tAAAAJGEzNzhhMDMwLWUzNWQtNDhjOC1hMWI3LTk1OGUzNmQ0MzAwYQ.jpg',
+  },
+  {
+    name: 'Stephen Rifenburgh',
+    username: 'Stephen',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/stephen-rifenburgh/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/009/07d/3203d6b.jpg',
+  },
+  {
+    name: 'Kristy Horton',
+    username: 'Kristy',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/kristy-horton-bab9b8129/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAx8AAAAJDUzOTFiYWI0LWNjYjUtNDc3Ny1hYjhmLTkyZDczNjc5ZmY3Ng.jpg',
+  },
+  {
+    name: 'Daniel Soraluz',
+    username: 'DanielS',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/danielsoraluz/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAziAAAAJDRiZDhmMTcyLTZlMzgtNDhmZC1hNWEyLTZhZTdkMDhlOWFiOQ.jpg',
+  },
+
+  {
+    name: 'Ariel Deschapell',
+    username: 'ArielD',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/ariel-deschapell/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAigAAAAJDlkOTczY2MxLWYzNGUtNDA4Mi1hMDU5LThmOTA3NjQ0ZjljYQ.jpg',
+  },
+  {
+    name: 'Ariel Quinones',
+    username: 'ArielQ',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/arielquinones/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPGAAAAJGU3ZGVhYzc3LTQ1Y2UtNDIzNS05NjIzLTM2YWM0OTgwMDU4NQ.jpg',
+  },
+  {
+    name: 'Josh Alexy',
+    username: 'Josh',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/joshalexy/',
+    img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAy0AAAAJGRkOTQ2Njg2LWQ2NzktNGVmZi1hMWEwLTk4NWJkMWY4ODJmNQ.jpg',
+  },
+  {
+    name: 'Oleh Kolinko',
+    username: 'ok',
+    password: '$2a$10$VkK9nbvT3DdoIuclpvtLFOBx5Du4IHSA8ttCmA3rk3OvyQpSlXFN.',
+    goal: 'Get Strong',
+    link: 'https://www.linkedin.com/in/oleh-kolinko/',
+    img: 'https://lh3.googleusercontent.com/-y9vU3BHc-xw/AAAAAAAAAAI/AAAAAAAAjgY/fb_G5jN3JjA/s640/photo.jpg',
+  },
+
+];
 
 const workouts = [
   {
@@ -744,16 +895,24 @@ const workouts = [
   },
 ];
 
-
-Exercise.create(exercises, (err, docs) => {
+User.create(users, (err,docs)=>{
   if(err) throw err;
 
   docs.forEach((oneDoc)=>{
-    console.log(`${oneDoc.name} ${oneDoc._id}`);
+      console.log(`${oneDoc.name} ${oneDoc._id}`);
   });
-
   mongoose.disconnect();
 });
+
+// Exercise.create(exercises, (err, docs) => {
+//   if(err) throw err;
+//
+//   docs.forEach((oneDoc)=>{
+//     console.log(`${oneDoc.name} ${oneDoc._id}`);
+//   });
+//
+//   mongoose.disconnect();
+// });
 
 // Workout.create(workouts, (err, docs) => {
 //   if(err) throw err;

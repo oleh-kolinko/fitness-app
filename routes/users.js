@@ -44,7 +44,7 @@ router.get('/users/:id',ensure.ensureLoggedIn(),(req,res,next)=>{
 
           Workout.findById(resultUser.currentWO, (err,resultCurrentWO)=>{
             res.render('users/show',{
-              user: resultUser,
+              userPage: resultUser,
               myProfile: myProfile,
               workouts: resultWorkout,
               favorites: resultFavorites,
@@ -56,7 +56,7 @@ router.get('/users/:id',ensure.ensureLoggedIn(),(req,res,next)=>{
         }else {
 
           res.render('users/show',{
-            user: resultUser,
+            userPage: resultUser,
             myProfile: myProfile,
             workouts: resultWorkout,
             favorites: resultFavorites,

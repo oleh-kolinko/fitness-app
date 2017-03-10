@@ -2,9 +2,9 @@ body {
   background: #f4f4f4;
   text-align: center;
 }
-/*nav{
-  background-color: #1ABC9C;
-}*/
+nav{
+  background-color: #4caf50;
+}
 
 
 a {
@@ -80,13 +80,13 @@ h4{
   text-align: left;
 }
 .user-chip{
-  transform: scale(2);
+  transform: scale(1.5);
   transition: .5s
 }
 .user-chip:hover{
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
-  transform: scale(2.2);
+  transform: scale(1.8);
 }
-.user-chip img{
+.user-chip>img{
   border: 1px solid #fff;
 }

@@ -1,38 +1,47 @@
 <!-- Show user info -->
 <div class="row user">
   <div class="col s12 m6">
-    <div class="card-panel hoverable">
+    <div class=" card-panel hoverable">
 
-      <div class="picker__wrap">
+      <div class="row picker__wrap">
         <img class='profile-picture circle z-depth-4 centered materialboxed'
-        src="https://lh3.googleusercontent.com/-y9vU3BHc-xw/AAAAAAAAAAI/AAAAAAAAjgY/fb_G5jN3JjA/s640/photo.jpg" alt="">
+        src="<%= userPage.img %>" alt="profile-picture">
       </div>
-      <h1>
-        <%= user.name %>
-      </h1>
-      <p>
-        Goal : <%= user.goal %> weight
-      </p>
+      <div class="row">
+        <h1>
+          <%= userPage.name %>
+        </h1>
+      </div>
+      <div class="row valign-wrapper">
+        <div class="col s7  center-align">
+            <h4>Goal:<span class='centered '><%= userPage.goal %></span</h4>
+        </div>
+        <div class="col s5">
+            <h1><img src="/images/d.png" alt="dumbbell" width="50px"> <%= userPage.upvotes %></h1>
+        </div>
+      </div>
 
-      <p>
-        Upvotes : <%= user.upvotes %>
-      </p>
+
+
+
 
     </div>
     <div class="card-panel hoverable">
       <!-- SHOW TODAY AGENDA -->
+      <% if (currentWO && myProfile){ %>
       <div class="row">
         <div class="col s7">
           <h4>TODAY'S AGENDA (<%=week[currentDay]%>)</h4>
         </div>
         <div class="col s5">
-          <h5>Following:<br> <a href="/workouts/<%=currentWO._id%>"><%=currentWO.name%></a></h5>
+          <h5>Following:<br> <a href="/workouts/<%=currentWO._id%>"
+              class="waves-effect waves btn blue"><%=currentWO.name%></a></h5>
         </div>
       </div>
       <div class="row">
 
       </div>
-      <% if (currentWO && myProfile){ %>
+
         <% let restDay = true %>
         <% currentWO.plan.forEach( w=>{ %>
           <% if(w.day === currentDay){ %>
@@ -50,8 +59,12 @@
                 Today is the rest day
               </p>
               <%}%>
-              <% } else { %>
+              <% } else if(myProfile){ %>
                 <!-- No program followed -->
+                  <h4>TODAY IS THE REST DAY</h4>
+                  Follow any workout plan to add today's agenda
+                <% } else {%>
+                  <h4 class='center-align'>PRIVATE <i class="material-icons">lock_outline</i></h4>
                 <% } %>
       </div>
   </div>
@@ -59,11 +72,12 @@
   <div class="col s12 m6">
     <div class=" card-panel hoverable ">
 
-
+      <% if (myProfile){ %>
         <a href='/workouts/new' id='add-new-workout-link-2'
-         class="btn-floating btn-large waves-effect waves-light red tooltipped"
+         class="btn-floating btn-large waves-effect waves-light green tooltipped"
          data-position="bottom" data-delay="50" data-tooltip="Create New Workout">
           <i class="material-icons">add</i></a>
+      <% } %>
           <h4 class="card-title" >User workouts:</h4>
 
       <!-- User workouts -->
@@ -76,9 +90,12 @@
               <%= workout.name %>
             </a></td>
             <% if (myProfile){ %>
-              <td><a href="/workouts/<%= workout._id %>/delete" class='waves-effect waves-red btn-flat'>
-                <i class="material-icons large tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete">delete_forever</i>
-              </a></td>
+              <td>
+                <a href="/workouts/<%= workout._id %>/delete"
+                   class='btn-floating btn waves-effect waves-light red hoverable tooltipped'
+                   data-position="bottom" data-delay="50" data-tooltip="DELETE workout">
+                  <i class="material-icons">delete</i></a>
+              </td>
               <% } %>
 
             </tr>
@@ -98,10 +115,16 @@
               <%= fav.name %>
             </a>
           </td><td>
-            <a href="/follow/<%= fav._id %>" class='waves-effect waves-green btn-flat'>
-            <i class="large material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Follow">
-              stars</i>
-            </a>
+            <% if (myProfile){ %>
+            <a href="/workouts/<%= fav._id %>/like"
+               class='btn-floating btn waves-effect waves-light red hoverable tooltipped'
+               data-position="bottom" data-delay="50" data-tooltip="Remove from favorites">
+              <i class="material-icons">thumb_down</i></a>
+            <a href="/follow/<%= fav._id %>"
+               class='btn-floating btn waves-effect waves-light blue hoverable tooltipped'
+               data-position="bottom" data-delay="50" data-tooltip="Follow">
+              <i class="material-icons">turned_in_not</i></a>
+              <% } %>
           </td>
         </tr></tbody>
         <% }) %>

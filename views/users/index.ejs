@@ -6,13 +6,17 @@
   <a href="users/<%= user._id %>">
 
     <div class="chip user-chip amber">
-      <img src="https://lh3.googleusercontent.com/-y9vU3BHc-xw/AAAAAAAAAAI/AAAAAAAAjgY/fb_G5jN3JjA/s640/photo.jpg"
+      <img src="<%= user.img %>"
       alt="profile-picture">
       <%= user.name %>
+      <div class="chip orange" style='transform:scale(.8)'>
+
+        <img src="/images/d.png" alt="dumbbell" style='transform:scale(.8)'> <%= user.upvotes %>
+      </div>
     </div>
   </a>
 
 </div>
-<br>
+
 
 <% }) %>

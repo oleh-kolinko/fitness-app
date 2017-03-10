@@ -1,21 +1,45 @@
 <!-- SHOW INDIVIDUAL WORKOUT PLAN -->
 
-<a href='/workouts/new' id='add-new-workout-link' class="btn-floating btn-large waves-effect waves-light red hoverable"><i class="material-icons">add</i></a>
+<a href='/workouts/new' id='add-new-workout-link' class="btn-floating btn-large waves-effect waves-light green hoverable"><i class="material-icons">add</i></a>
 <div class="card">
   <!-- <div class="col s4 card-image">
           <img src="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg">
 
         </div> -->
   <div class="card-content">
-    <div class="col s4">
+    <div class="col s12 m4">
       <h3><%= workout.name %></h3>
-      <p>Created by  <a href="/users/<%= owner._id %> "><%= owner.name %></a></p>
+      <p>Created by
+        <a href='/users/<%= owner._id %>' class="chip hoverable">
+            <img src="<%= owner.img %>"
+            alt="profile-picture">
+            <%= owner.name %>
+        </a>
+      </p>
     </div>
-    <div class="col s4">
-      <h5>Upvotes: <%= workout.upvotes %></h5>
-      <a href="/workouts/<%= workout._id %>/like">Like</a>
+    <div class="col s12 m4">
+      <h1>
+        <img src="/images/d.png" alt="dumbbell" width="50px"> <%= workout.upvotes %></h1>
+        <br>
+
+        <% if( user.favorites.includes( workout._id.toString() ) ){ %>
+          <a href="/workouts/<%= workout._id %>/like"
+             class='btn-floating btn-large waves-effect waves-light red hoverable tooltipped'
+             data-position="bottom" data-delay="50" data-tooltip="Remove from favorites">
+            <i class="material-icons">thumb_down</i></a>
+
+        <% }else{ %>
+          <a href="/workouts/<%= workout._id %>/like"
+             class='btn-floating btn-large waves-effect waves-light green hoverable tooltipped'
+             data-position="bottom" data-delay="50" data-tooltip="Like and add to favorites">
+            <i class="material-icons">thumb_up</i></a>
+        <% } %>
+        <a href="/follow/<%= workout._id %>"
+           class='btn-floating btn-large waves-effect waves-light blue hoverable tooltipped'
+           data-position="bottom" data-delay="50" data-tooltip="Follow">
+          <i class="material-icons">turned_in_not</i></a>
     </div>
-    <div class="col s4">
+    <div class="col s12 m4">
       <p><%= workout.description %></p>
 
     </div>
@@ -47,8 +71,9 @@
 
 <% workout.plan.forEach( (p,i)=>{ %>
   <div class='exercise' data-day='<%= p.day %>' hidden>
-  <a href="/exercises/<%= p.exercise %>"><%= p.exercise %></a>
-  <span class='chip'> <%= p.reps %> REPS</span>
+
+    <a href="/exercises/<%= p.exercise %>"><%= p.exercise %></a>
+    <span class='chip'> <%= p.reps %> REPS</span>
   </div>
 <% }) %>
 
