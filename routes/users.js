@@ -63,13 +63,9 @@ router.get('/users/:id',ensure.ensureLoggedIn(),(req,res,next)=>{
             currentWO: ''
           });
         }
-
-
       });
     });
-
   });
-
 });
 
 router.get('/follow/:id',ensure.ensureLoggedIn(), (req,res,next)=>{

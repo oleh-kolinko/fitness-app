@@ -2,6 +2,9 @@ $(document).ready(function(){
     $('ul.tabs').tabs({'swipeable':true});
     // Activate the side menu
     $(".button-collapse").sideNav();
+    $('select').material_select();
+     $('.materialboxed').materialbox();
+      $('.tooltipped').tooltip({delay: 50});
 
     // $('a').click(function (e) {
     // e.preventDefault();                   // prevent default anchor behavior

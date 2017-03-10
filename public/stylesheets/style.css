@@ -2,9 +2,9 @@ body {
   background: #f4f4f4;
   text-align: center;
 }
-nav{
+/*nav{
   background-color: #1ABC9C;
-}
+}*/
 
 a {
   color: #00B7FF;
@@ -39,6 +39,9 @@ a {
   right: 5%;
   transform: scale(1.5);
 }
+#add-new-workout-link-2{
+  float:right;
+}
 
 
 
@@ -50,6 +53,7 @@ a {
   border-radius: 50%;
   width: 60%;
   top: -70px;
+  left: 20%;
   margin-bottom: -100px;
   position: relative;
 }
@@ -66,4 +70,11 @@ select{
   position: relative;
   top: -40px;
   left: 40%;
+}
+td{
+  padding: 2px;
+  text-align: right;
+}
+h4{
+  text-align: left;
 }

@@ -137,15 +137,13 @@ router.get('/workouts/:id/like',ensure.ensureLoggedIn(),(req,res,next)=>{
             resultUser.save((err)=>{
               resultWorkout.save((save)=>{
                 res.redirect('/workouts/'+id);
+
               });
             });
-
           });
         });
-
       });
     }
-
   });
 });
 

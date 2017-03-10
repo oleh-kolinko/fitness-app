@@ -4,7 +4,7 @@
     <div class="card-panel hoverable">
 
       <div class="picker__wrap">
-        <img class='profile-picture circle z-depth-4'
+        <img class='profile-picture circle z-depth-4 centered materialboxed'
         src="https://lh3.googleusercontent.com/-y9vU3BHc-xw/AAAAAAAAAAI/AAAAAAAAjgY/fb_G5jN3JjA/s640/photo.jpg" alt="">
       </div>
       <h1>
@@ -13,9 +13,7 @@
       <p>
         Goal : <%= user.goal %> weight
       </p>
-      <p>
-        ImgUrl : <%= user.img %>
-      </p>
+
       <p>
         Upvotes : <%= user.upvotes %>
       </p>
@@ -24,79 +22,80 @@
   </div>
 
   <div class="col s12 m6">
-    <div class="card-panel hoverable">
-      <!-- SHOW TODAY AGENDA -->
-      <% if (currentWO && myProfile){ %>
+    <div class=" card-panel hoverable">
 
-        <h5>Things for today</h5>
-        <h6><%=week[currentDay]%></h6>
-        <% let restDay = true %>
-        <% currentWO.plan.forEach( w=>{ %>
-          <% if(w.day === currentDay){ %>
-            <% restDay = false %>
-            <div class="exercise">
-              <%= w.exercise %>
-            </div>
-            <% }}) %>
-            <% if (restDay){ %>
-              <p>
-                Today is the rest day
-              </p>
-              <%}%>
-              <% } else { %>
-                <!-- No program followed -->
-                <% } %>
 
+        <a href='/workouts/new' id='add-new-workout-link-2'
+         class="btn-floating btn-large waves-effect waves-light red tooltipped"
+         data-position="bottom" data-delay="50" data-tooltip="Create New Workout">
+          <i class="material-icons">add</i></a>
+          <h4 class="card-title" >User workouts:</h4>
+
+      <!-- User workouts -->
+      <table class="highlight">
+
+        <% workouts.forEach( workout =>{ %>
+          <tbody>
+          <tr><td>
+            <a href="/workouts/<%= workout._id %>" class='waves-effect waves-green btn-flat'>
+              <%= workout.name %>
+            </a></td>
+            <% if (myProfile){ %>
+              <td><a href="/workouts/<%= workout._id %>/delete" class='waves-effect waves-red btn-flat'>
+                <i class="material-icons large tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete">delete_forever</i>
+              </a></td>
+              <% } %>
+
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
     </div>
+    <div class="card-panel hoverable">
+      <h4 class="card-title">Favorites:</h4>
 
+      <!-- Favorites -->
+      <table class='highlight'>
+        <% favorites.forEach( fav =>{ %>
+          <tbody><tr>
+            <td>
+            <a href="/workouts/<%= fav._id %>" class='waves-effect waves-green btn-flat'>
+              <%= fav.name %>
+            </a>
+          </td><td>
+            <a href="/follow/<%= fav._id %>" class='waves-effect waves-green btn-flat'>
+            <i class="large material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Follow">
+              stars</i>
+            </a>
+          </td>
+        </tr></tbody>
+        <% }) %>
+      </table class='highlight'>
+    </div>
   </div>
 </div>
 
 
-<!-- Panel for workouts, favorites -->
-<div class="row card-panel hoverable">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s6"><a href="#test1"class="active">My workouts</a></li>
-        <li class="tab col s6"><a href="#test2">Favorites</a></li>
+  <div class="card-panel hoverable">
+    <!-- SHOW TODAY AGENDA -->
+    <% if (currentWO && myProfile){ %>
 
-      </ul>
-    </div>
-    <div id="test1" class="col s12">
-      <!-- User workouts -->
-      <ul>
-        <% workouts.forEach( workout =>{ %>
-
-          <li>
-            <a href="/workouts/<%= workout._id %>">
-              <%= workout.name %>
-            </a>
-
-
-            <% if (myProfile){ %>
-              <a href="/workouts/<%= workout._id %>/delete" class='waves-effect waves-red btn-flat'>
-              <i class="material-icons">delete_forever</i>
-            </a>
-            <% } %>
-
-          </li>
-        <% }) %>
-      </ul>
-    </div>
-    <div id="test2" class="col s12">
-      <!-- Favorites -->
-      <ul>
-        <% favorites.forEach( fav =>{ %>
-          <li>
-            <a href="/workouts/<%= fav._id %>">
-              <%= fav.name %>
-            </a>
-            <a href="/follow/<%= fav._id %>" class='waves-effect waves-red btn-flat'>
-            Follow
-            
-          </a>
-          </li>
-        <% }) %>
-      </ul>
-    </div>
+      <h5>Things for today</h5>
+      <h6><%=week[currentDay]%></h6>
+      <% let restDay = true %>
+      <% currentWO.plan.forEach( w=>{ %>
+        <% if(w.day === currentDay){ %>
+          <% restDay = false %>
+          <div class="exercise">
+            <%= w.exercise %>
+          </div>
+          <% }}) %>
+          <% if (restDay){ %>
+            <p>
+              Today is the rest day
+            </p>
+            <%}%>
+            <% } else { %>
+              <!-- No program followed -->
+              <% } %>
   </div>

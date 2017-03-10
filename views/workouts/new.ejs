@@ -8,7 +8,7 @@
       <input id='name' class='validate' type='text' name='name' required></input>
     </div>
     <div class="input-field col s6">
-      <select id='goal-select' class="" name="goal">
+      <select id='goal-select' class="" name="goal" hidden>
         <option value="Gain weight">Gain weight</option>
         <option value="Lose weight">Lose weight</option>
       </select>
@@ -73,7 +73,7 @@
 
 
 <div id="choose-exercise" class='card-panel hoverable' hidden>
-  <select id='exercise-selector' name="">
+  <select id='exercise-selector' name="" hidden>
     <% exercises.forEach(e=>{ %>
       <option value="<%= e.name %>"><%= e.name %></option>
     <% }) %>

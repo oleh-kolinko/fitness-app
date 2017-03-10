@@ -5,38 +5,40 @@
     <%= errorMessage %>
   </p>
 <% } %>
+<div class="card-panel">
 
-<form action="/signup" method="post">
-  <div class='input-field'>
-    <label for="name-input"> Full name </label>
-    <input type="text" name="name" id="name-input"
-  </div>
+  <form action="/signup" method="post">
+    <div class='input-field'>
+      <label for="name-input"> Full name </label>
+      <input type="text" name="name" id="name-input"
+    </div>
 
-  <div class='input-field'>
-    <label for="username-input"> Username </label>
-    <input type="text" name="username" id="username-input"
-  </div>
+    <div class='input-field'>
+      <label for="username-input"> Username </label>
+      <input type="text" name="username" id="username-input"
+    </div>
 
-  <div class='input-field'>
-    <label for="password-input"> Password </label>
-    <input type="password" name="password" id="password-input"
-  </div>
+    <div class='input-field'>
+      <label for="password-input"> Password </label>
+      <input type="password" name="password" id="password-input"
+    </div>
 
-  <div class='input-field'>
-    <select class="" name="goal">
-      <option value="gain">Gain weight</option>
-      <option value="lose">Lose weight</option>
-    </select>
-  </div>
+    <div class='input-field'>
+      
+      <select hidden name="goal">
+        <option value="gain">Gain weight</option>
+        <option value="lose">Lose weight</option>
+      </select>
+    </div>
 
-  <button class='waves-effect waves-light btn' type='submit'> Create New Account
-<i class="material-icons right">send</i>
-  </button>
-</form>
-
-<p>
-  Already have an account?
-  <a href="/login">
-    Log in.
-  </a>
-</p>
+    <button class='waves-effect waves-light btn' type='submit'> Create New Account
+      <i class="material-icons right">send</i>
+    </button>
+  </form>
+  <p>
+    Already have an account?
+    <a href="/login">
+      Log in.
+    </a>
+  </p>
+</div>
