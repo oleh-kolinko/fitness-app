@@ -1,6 +1,7 @@
 body {
   background: #f4f4f4;
   text-align: center;
+  color:#333;
 }
 nav{
   background-color: #4caf50;
@@ -16,8 +17,8 @@ a {
   position: absolute;
   top: 35%;
   left: 35%;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 #choose-exercise #add{
   position: relative;
@@ -89,4 +90,12 @@ h4{
 }
 .user-chip>img{
   border: 1px solid #fff;
+}
+.description-wo{
+  padding: 30px;
+}
+
+.workout-card{
+  color: #333;
+  height: 200px;
 }

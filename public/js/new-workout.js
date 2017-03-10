@@ -1,13 +1,35 @@
 
 
   $('#choose-exercise').hide();
-  
+
 
   let day = 0;
   $('.add-exercise').click((e)=>{
     day = $(e.currentTarget).attr('data-day');
-    console.log(day);
+
     $('#choose-exercise').fadeIn(500);
+  });
+
+  $('#category-selector').change((e)=>{
+      const category = $('#category-selector').val();
+
+      $('#exercise-selector').empty();
+
+
+      exercises.forEach(e=>{
+        if(e.muscle == category){
+          const name = e.name;
+
+          console.log(name);
+          const option = `<option value='${name}'>${name}</option>`;
+
+          $(option).appendTo('#exercise-selector');
+        }
+
+        $('#exercise-selector').material_select();
+      });
+
+
   });
 
   $('#choose-exercise #add').click((e)=>{

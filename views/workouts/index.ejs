@@ -1,13 +1,31 @@
-<a href='/workouts/new' id='add-new-workout-link' class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+<a href='/workouts/new' id='add-new-workout-link' class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
 <h2>ALL WORKOUTS:</h2>
 
-  <% workouts.forEach( workout =>{ %>
+<% workouts.forEach( workout =>{ %>
 
+
+  <div class="col s12 m6 l4 ">
     <a href="workouts/<%= workout._id %>">
-    <div class='card-panel hoverable'>
+      <div class="card-panel hoverable workout-card">
+        <div class="row">
+          <h3 class="card-title"><%= workout.name %></h3>
 
-        <%= workout.name %>
-    </div>
-  </a>
+        </div>
+        <div class="row valign-wrapper">
 
-  <% }) %>
+          <div class="col s6">
+            <p class="tooltipped"
+            data-position="bottom" data-delay="50" data-tooltip="GOAL"><%= workout.goal %> </p>
+          </div>
+          <div class="col s6 valign center-align">
+            <h4 class="tooltipped"
+            data-position="bottom" data-delay="50" data-tooltip="Dumbbells">
+            <img src="/images/d.png" alt="dumbbell" width="30px" > <%= workout.upvotes %></h4>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  </div>
+
+<% }) %>

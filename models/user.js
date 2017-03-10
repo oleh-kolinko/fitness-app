@@ -6,7 +6,7 @@ const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
   goal: String,
-  img: String,
+  img: { type: String, default: '/images/profile.png' },
   link: String,
   upvotes: {type: Number, default: 0},
   favorites: [String],//[{type: Schema.Types.ObjectId, ref: 'Workout'}],

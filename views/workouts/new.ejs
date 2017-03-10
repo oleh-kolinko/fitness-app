@@ -9,9 +9,13 @@
     </div>
     <div class="input-field col s6">
       <select id='goal-select' class="" name="goal" hidden>
-        <option value="Gain weight">Get strong</option>
-        <option value="Lose weight">Get lean</option>
+        <option value="Get Strong">Get Strong</option>
+        <option value="Get Lean">Get Lean</option>
       </select>
+    </div>
+    <div class="input-field col s12">
+      <label for='description'>Description:</label>
+      <input id='description' class='validate' type='text' name='description'></input>
     </div>
 
   </div>
@@ -70,13 +74,26 @@
 </form>
 
 
-
+<script>
+  var exercises = <%- JSON.stringify(exercises) %>;
+</script>
 
 <div id="choose-exercise" class='card-panel hoverable' hidden>
-  <select id='exercise-selector' name="" hidden>
-    <% exercises.forEach(e=>{ %>
-      <option value="<%= e.name %>"><%= e.name %></option>
-    <% }) %>
+  <select id='category-selector' name="" hidden>
+    <option value="Chest">Chest</option>
+    <option value="Shoulder">Shoulder</option>
+    <option value="Abdominals">Abdominals</option>
+    <option value="Biceps">Biceps</option>
+    <option value="Traps">Traps</option>
+    <option value="Lats">Lats</option>
+    <option value="Middle Back">Middle Back</option>
+    <option value="Lower Back">Lower Back</option>
+    <option value="Quadriceps">Quadriceps</option>
+    <option value="Calves">Calves</option>
+  </select>
+
+  <select id='exercise-selector' name="" hidden >
+
   </select>
   <div class="input-field">
     <label for='sets'>Sets:</label>

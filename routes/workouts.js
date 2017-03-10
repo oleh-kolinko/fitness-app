@@ -36,6 +36,7 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
     name: req.body.name,
     goal: req.body.goal,
     owner: req.user._id,
+    description: req.body.description,
     upvotes: 0,
     plan: [],
   });

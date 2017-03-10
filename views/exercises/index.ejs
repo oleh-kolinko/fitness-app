@@ -1,12 +1,16 @@
 <h2>ALL EXERCISES:</h2>
 
+<script>
+  var exercises = <%- JSON.stringify(exercises) %>;
+</script>
+
   <% exercises.forEach( exercise =>{ %>
     <div class="col xs12 s6 m4 l3">
       <a href="exercises/<%= exercise.name %>">
       <div class="card hoverable">
 
         <div class="card-image">
-        
+
           <img id='<%= exercise._id %>'src="<%= exercise.img1 %>">
           <span class="card-title"><%= exercise.name %></span>
         </div>
@@ -21,3 +25,5 @@
 
 
   <% }) %>
+
+<script src='/js/new-workout.js'></script>

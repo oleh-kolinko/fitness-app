@@ -14,7 +14,7 @@ const exercises = [
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/227/Male/m/227_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/227/Male/m/227_2.jpg',
     bodyOnly: true,
-    muscle: 'Shoulders',
+    muscle: 'Shoulder',
     description:
     ` With your back to the wall bend at the waist and place both hands on the floor at shoulder width.
      Kick yourself up against the wall with your arms straight. Your body should be upside down with the arms and legs fully extended. Keep your whole body as straight as possible. Tip: If doing this for the first time, have a spotter help you. Also, make sure that you keep facing the wall with your head, rather than looking down.
@@ -53,7 +53,7 @@ const exercises = [
     video: 'https://videocdn.bodybuilding.com/video/mp4/38000/39141m.mp4',
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/96/Male/m/96_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/96/Male/m/96_2.jpg',
-    bodyOnly: true,
+    bodyOnly: false,
     muscle: 'Traps',
     description:
     ` Stand erect with a dumbbell on each hand (palms facing your torso), arms extended on the sides.
@@ -66,7 +66,7 @@ const exercises = [
     video: 'https://videocdn.bodybuilding.com/video/mp4/52000/53961m.mp4',
     img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/55/Male/m/55_1.jpg',
     img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/55/Male/m/55_2.jpg',
-    bodyOnly: true,
+    bodyOnly: false,
     muscle: 'Traps',
     description:
     ` To get into the starting position, hold your body at arm's length with your arms nearly locked above the bars.
@@ -74,8 +74,103 @@ const exercises = [
      Then, exhale and push your torso back up using your triceps to bring your body back to the starting position.
      Repeat the movement for the prescribed amount of repetitions.`
   },
-
-
+  {
+    name: 'Standing Dumbbell Upright Row',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/40000/41911m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/368/Male/m/368_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/368/Male/m/368_2.jpg',
+    bodyOnly: false,
+    muscle: 'Traps',
+    description:
+    ` Grasp a dumbbell in each hand with a pronated (palms forward) grip that is slightly less than shoulder width. The dumbbells should be resting on top of your thighs. Your arms should be extended with a slight bend at the elbows and your back should be straight. This will be your starting position.
+      Use your side shoulders to lift the dumbbells as you exhale. The dumbbells should be close to the body as you move it up and the elbows should drive the motion. Continue to lift them until they nearly touch your chin. Tip: Your elbows should drive the motion. As you lift the dumbbells, your elbows should always be higher than your forearms. Also, keep your torso stationary and pause for a second at the top of the movement.
+      Lower the dumbbells back down slowly to the starting position. Inhale as you perform this portion of the movement.
+      Repeat for the recommended amount of repetitions.`
+  },
+  {
+    name: 'Barbell Shrug',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/38000/38331m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/97/Male/m/97_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/97/Male/m/97_2.jpg',
+    bodyOnly: false,
+    muscle: 'Traps',
+    description:
+    ` Stand up straight with your feet at shoulder width as you hold a barbell with both hands in front of you using a pronated grip (palms facing the thighs). Tip: Your hands should be a little wider than shoulder width apart. You can use wrist wraps for this exercise for a better grip. This will be your starting position.
+      Raise your shoulders up as far as you can go as you breathe out and hold the contraction for a second. Tip: Refrain from trying to lift the barbell by using your biceps.
+      Slowly return to the starting position as you breathe in.
+      Repeat for the recommended amount of repetitions.`
+  },
+  {
+    name: 'Barbell Full Squat',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/52000/53801m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/64/Male/m/64_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/64/Male/m/64_2.jpg',
+    bodyOnly: false,
+    muscle: 'Quadriceps',
+    description:
+    ` This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just above shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.
+      Hold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.
+      Step away from the rack and position your legs using a shoulder-width medium stance with the toes slightly pointed out. Keep your head up at all times and maintain a straight back. This will be your starting position.
+      Begin to slowly lower the bar by bending the knees and sitting back with your hips as you maintain a straight posture with the head up. Continue down until your hamstrings are on your calves. Inhale as you perform this portion of the movement.
+      Begin to raise the bar as you exhale by pushing the floor with the heel or middle of your foot as you straighten the legs and extend the hips to go back to the starting position.
+      Repeat for the recommended amount of repetitions.`
+  },
+  {
+    name: 'Barbell Lunge',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/38000/38291m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/41/Male/m/41_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/41/Male/m/41_2.jpg',
+    bodyOnly: false,
+    muscle: 'Quadriceps',
+    description:
+    ` This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just below shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it.
+      Hold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso.
+      Step away from the rack and step forward with your right leg and squat down through your hips, while keeping the torso upright and maintaining balance. Inhale as you go down. Note: Do not allow your knee to go forward beyond your toes as you come down, as this will put undue stress on the knee joint. li>
+      Using mainly the heel of your foot, push up and go back to the starting position as you exhale.
+      Repeat the movement for the recommended amount of repetitions and then perform with the left leg.`
+  },
+  {
+    name: 'Bent Over Barbell Row',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/38000/38411m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/m/20_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/m/20_2.jpg',
+    bodyOnly: false,
+    muscle: 'Middle Back',
+    description:
+    ` Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.
+      Now, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause.
+      Then inhale and slowly lower the barbell back to the starting position.
+      Repeat for the recommended amount of repetitions.`
+  },
+  {
+    name: 'Incline Bench Pull',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/40000/40191m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/278/Male/m/278_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/278/Male/m/278_1.jpg',
+    bodyOnly: false,
+    muscle: 'Middle Back',
+    description:
+    ` Grab a dumbbell in each hand and lie face down on an incline bench that is set to an incline that is approximately 30 degrees.
+      Let the arms hang to your sides fully extended as they point to the floor.
+      Turn the wrists until your hands have a pronated (palms down) grip.
+      Now flare the elbows out. This will be your starting position.
+      As you breathe out, start to pull the dumbbells up as if you are doing a reverse bench press. You will do this by bending at the elbows and bringing the upper arms up as you let the forearms hang. Continue this motion until the upper arms are at the same level as your back. Tip: The elbows will come out to the side and your upper arms and torso should make the letter "T" at the top of the movement. Hold the contraction at the top for a second.
+      Slowly go back down to the starting position as you breathe in.
+      Repeat for the recommended amount of repetitions.`
+  },
+  {
+    name: 'Leverage High Row',
+    video: 'https://videocdn.bodybuilding.com/video/mp4/90000/90832m.mp4',
+    img1: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/892/Male/m/892_1.jpg',
+    img2: 'https://www.bodybuilding.com/exercises/exerciseImages/sequences/892/Male/m/892_2.jpg',
+    bodyOnly: false,
+    muscle: 'Middle Back',
+    description:
+    ` Load an appropriate weight onto the pins and adjust the seat height so that you can just reach the handles above you. Adjust the knee pad to help keep you down. Grasp the handles with a pronated grip. This will be your starting position.
+      Pull the handles towards your torso, retracting your shoulder blades as you flex the elbow.
+      Pause at the bottom of the motion, and then slowly return the handles to the starting position.
+      For multiple repetitions, avoid completely returning the weight to the stops to keep tension on the muscles being worked.`
+  },
 
     ////------------------------------------------------Chest
 
@@ -698,7 +793,6 @@ const exercises = [
 ];
 
 const users = [
-
   {
     name: 'Nizar Khalife Iglesias',
     username: 'Nizar',
@@ -811,7 +905,6 @@ const users = [
     link: 'https://www.linkedin.com/in/danielsoraluz/',
     img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAziAAAAJDRiZDhmMTcyLTZlMzgtNDhmZC1hNWEyLTZhZTdkMDhlOWFiOQ.jpg',
   },
-
   {
     name: 'Ariel Deschapell',
     username: 'ArielD',
@@ -898,21 +991,21 @@ const workouts = [
 User.create(users, (err,docs)=>{
   if(err) throw err;
 
-  docs.forEach((oneDoc)=>{
-      console.log(`${oneDoc.name} ${oneDoc._id}`);
+  // docs.forEach((oneDoc)=>{
+  //     console.log(`${oneDoc.name} ${oneDoc._id}`);
+  // });
+
+  Exercise.create(exercises, (err, docs) => {
+    if(err) throw err;
+
+    // docs.forEach((oneDoc)=>{
+    //   console.log(`${oneDoc.name} ${oneDoc._id}`);
+    // });
+
+    mongoose.disconnect();
   });
-  mongoose.disconnect();
 });
 
-// Exercise.create(exercises, (err, docs) => {
-//   if(err) throw err;
-//
-//   docs.forEach((oneDoc)=>{
-//     console.log(`${oneDoc.name} ${oneDoc._id}`);
-//   });
-//
-//   mongoose.disconnect();
-// });
 
 // Workout.create(workouts, (err, docs) => {
 //   if(err) throw err;

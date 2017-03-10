@@ -17,16 +17,6 @@
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
 
-    <!-- <nav>
-      <ul>
-        <li> <a href="/">Home </a> </li>
-        <li> <a href="/users">ALL Users </a> </li>
-        <li> <a href="/workouts"> ALL workouts </a> </li>
-        <li> <a href="/workouts/new"> New Workout </a> </li>
-        <li> <a href="/exercises"> ALL exercises </a> </li>
-      </ul>
-
-    </nav> -->
 
 <nav>
   <div class="nav-wrapper fixed-navbar">
@@ -50,10 +40,18 @@
   </div>
 
     <ul class="side-nav" id="mobile-demo">
-      <li> <a href="/">HOME</a> </li>
-      <li> <a href="/users">PEOPLE</a> </li>
-      <li> <a href="/workouts">WORKOUTS</a> </li>
-      <li> <a href="/exercises">EXERCISES</a> </li>
+      <li>  <% if (user) { %>
+          <a href="/users/<%= user._id %>"><%= user.name %></a>
+
+            </li>
+        <li> <a href="/logout">LOGOUT</a> </li>
+        <% } else {%>
+          <li> <a href="/login">LOGIN</a> </li>
+        <% }  %>
+
+        <li> <a href="/users">PEOPLE</a> </li>
+        <li> <a href="/workouts">WORKOUTS</a> </li>
+        <li> <a href="/exercises">EXERCISES</a> </li>
     </ul>
   </div>
 </nav>
