@@ -19,10 +19,45 @@
       </p>
 
     </div>
+    <div class="card-panel hoverable">
+      <!-- SHOW TODAY AGENDA -->
+      <div class="row">
+        <div class="col s7">
+          <h4>TODAY'S AGENDA (<%=week[currentDay]%>)</h4>
+        </div>
+        <div class="col s5">
+          <h5>Following:<br> <a href="/workouts/<%=currentWO._id%>"><%=currentWO.name%></a></h5>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+      <% if (currentWO && myProfile){ %>
+        <% let restDay = true %>
+        <% currentWO.plan.forEach( w=>{ %>
+          <% if(w.day === currentDay){ %>
+            <% restDay = false %>
+            <div class="exercise">
+              <a href='/exercises/<%= w.exercise %>'
+                class="waves-effect waves-green btn-flat" ><%= w.exercise %>
+              <span class='chip'><%= w.reps %> REPS</span>
+            </a>
+
+            </div>
+            <% }}) %>
+            <% if (restDay){ %>
+              <p>
+                Today is the rest day
+              </p>
+              <%}%>
+              <% } else { %>
+                <!-- No program followed -->
+                <% } %>
+      </div>
   </div>
 
   <div class="col s12 m6">
-    <div class=" card-panel hoverable">
+    <div class=" card-panel hoverable ">
 
 
         <a href='/workouts/new' id='add-new-workout-link-2'
@@ -32,7 +67,7 @@
           <h4 class="card-title" >User workouts:</h4>
 
       <!-- User workouts -->
-      <table class="highlight">
+      <table class="bordered">
 
         <% workouts.forEach( workout =>{ %>
           <tbody>
@@ -55,7 +90,7 @@
       <h4 class="card-title">Favorites:</h4>
 
       <!-- Favorites -->
-      <table class='highlight'>
+      <table class='bordered'>
         <% favorites.forEach( fav =>{ %>
           <tbody><tr>
             <td>
@@ -74,28 +109,3 @@
     </div>
   </div>
 </div>
-
-
-  <div class="card-panel hoverable">
-    <!-- SHOW TODAY AGENDA -->
-    <% if (currentWO && myProfile){ %>
-
-      <h5>Things for today</h5>
-      <h6><%=week[currentDay]%></h6>
-      <% let restDay = true %>
-      <% currentWO.plan.forEach( w=>{ %>
-        <% if(w.day === currentDay){ %>
-          <% restDay = false %>
-          <div class="exercise">
-            <%= w.exercise %>
-          </div>
-          <% }}) %>
-          <% if (restDay){ %>
-            <p>
-              Today is the rest day
-            </p>
-            <%}%>
-            <% } else { %>
-              <!-- No program followed -->
-              <% } %>
-  </div>

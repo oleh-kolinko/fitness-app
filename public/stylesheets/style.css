@@ -6,6 +6,7 @@ body {
   background-color: #1ABC9C;
 }*/
 
+
 a {
   color: #00B7FF;
   text-decoration: none;
@@ -77,4 +78,15 @@ td{
 }
 h4{
   text-align: left;
+}
+.user-chip{
+  transform: scale(2);
+  transition: .5s
+}
+.user-chip:hover{
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  transform: scale(2.2);
+}
+.user-chip img{
+  border: 1px solid #fff;
 }

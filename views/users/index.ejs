@@ -1,11 +1,18 @@
 <h2>ALL USERS:</h2>
 
-  <% users.forEach( user =>{ %>
+<% users.forEach( user =>{ %>
 
-    <a href="users/<%= user._id %>">
-    <div class='card-panel hoverable z-depth-1'>
-        <%= user.name %>
+<div class="row">
+  <a href="users/<%= user._id %>">
+
+    <div class="chip user-chip amber">
+      <img src="https://lh3.googleusercontent.com/-y9vU3BHc-xw/AAAAAAAAAAI/AAAAAAAAjgY/fb_G5jN3JjA/s640/photo.jpg"
+      alt="profile-picture">
+      <%= user.name %>
     </div>
   </a>
 
-  <% }) %>
+</div>
+<br>
+
+<% }) %>

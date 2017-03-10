@@ -1,7 +1,7 @@
 <h2> Log In </h2>
 
-<% if (errorMessage) { %>
-  <p class="error-message">
+<% if (errorMessage.length>0) { %>
+  <p class="chip red lighten-2 white-text">
     <%= errorMessage %>
   </p>
 <% } %>
