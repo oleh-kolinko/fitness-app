@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');//get mongoose
-// mongoose.connect(process.env.MONGODB_URI);//connect to DB
-mongoose.connect('mongodb://localhost/fitness-app');//connect to DB
+mongoose.connect(process.env.MONGODB_URI);//connect to DB
+// mongoose.connect('mongodb://localhost/fitness-app');//connect to DB
 
 const Exercise = require('../models/exercise');//get product model from /models/product.js
 const Workout = require('../models/workout');//get product model from /models/product.js

@@ -22,7 +22,8 @@ a {
 }
 #choose-exercise #add{
   position: relative;
-  top:40px;
+  transform: scale(1.2);
+  top:72px;
 }
 #new-workout-form .add-exercise{
   display: inline;
