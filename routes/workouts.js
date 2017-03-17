@@ -41,7 +41,7 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
     plan: [],
   });
 
-  if( !$.isArray(req.body.day) ){
+  if( Array.isArray(req.body.name) ){
     newWorkout.plan.push({
       day: parseInt(req.body.day),
       reps: req.body.reps,
