@@ -41,13 +41,22 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
     plan: [],
   });
 
-  for(let i = 0; i< req.body.day.length; i++){
-
+  if(typeof req.body.name == 'string'){
     newWorkout.plan.push({
-      day: parseInt(req.body.day[i]),
-      reps: req.body.reps[i],
-      exercise: req.body.exercise[i],
+      day: parseInt(req.body.day),
+      reps: req.body.reps,
+      exercise: req.body.exercise,
     });
+  }else{
+
+    for(let i = 0; i< req.body.day.length; i++){
+
+      newWorkout.plan.push({
+        day: parseInt(req.body.day[i]),
+        reps: req.body.reps[i],
+        exercise: req.body.exercise[i],
+      });
+    }
   }
 
 
@@ -58,7 +67,7 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
   });
 });
 
-router.get('/workouts/:id',(req,res,next)=>{
+router.get('/workouts/:id',ensure.ensureLoggedIn(),(req,res,next)=>{
   const workoutId = req.params.id;
   const exercisesNames = [];
   Workout.findById(workoutId,(err,resultWorkout)=>{
