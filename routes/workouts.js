@@ -42,13 +42,6 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
   });
 
   if( Array.isArray(req.body.name) ){
-    newWorkout.plan.push({
-      day: parseInt(req.body.day),
-      reps: req.body.reps,
-      exercise: req.body.exercise,
-    });
-  }else{
-
     for(let i = 0; i< req.body.day.length; i++){
 
       newWorkout.plan.push({
@@ -57,6 +50,13 @@ router.post('/workouts/new',ensure.ensureLoggedIn(),(req,res,next)=>{
         exercise: req.body.exercise[i],
       });
     }
+
+  }else{
+    newWorkout.plan.push({
+      day: parseInt(req.body.day),
+      reps: req.body.reps,
+      exercise: req.body.exercise,
+    });
   }
 
 
